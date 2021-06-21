@@ -4140,7 +4140,7 @@ end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "- هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local Get_Files, res = https.request("https://kkkbk/LHB.github.io/GetFiles.json")
+local Get_Files, res = https.request("https://alyafae.github.io/GetFiles.json")
 print(Get_Files)
 print(res)
 if res == 200 then
@@ -4180,7 +4180,7 @@ TText = "- الملف موجود بالفعل \n- تم تحديث الملف ✓
 else
 TText = "- تم تثبيت وتفعيل الملف بنجاح ✓"
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/kkkbk/LHB.github.io/main/plugins/"..FileName)
+local Get_Files, res = https.request("https://raw.githubusercontent.com/ALYAFAE/alyafae.github.io/Master/"..FileName)
 if res == 200 then
 print("DONLOADING_FROM_URL: "..FileName)
 local FileD = io.open("plugins/"..FileName,'w+')
