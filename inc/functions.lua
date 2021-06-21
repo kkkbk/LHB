@@ -48,9 +48,6 @@ if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لد
 return UpdateM1Query(msg)
 elseif TextCmdquery == "List2" then
 if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
-return UpdateM7Query(msg)
-elseif TextCmdquery == "List7" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
 return UpdateM2Query(msg)
 elseif TextCmdquery == "List3" then
 if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
@@ -179,54 +176,6 @@ rr,res=https.request(Method..'?chat_id='..msg.chat_id_..'&text='..URL.escape(msg
 if res == 200 then return false end
 print(rr)
 end
-function UpdateM7Query(msg)
-list_settings = '{"inline_keyboard": ['
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
-..']}'
-msg.KeyboardCmd = list_settings
-textMD = [[
-🤡│•⊱ الالعاب 
-⚙️│•⊱ لتفعيل الالعاب او تعطيلها ارسل
-🎖│•⊱ تفعـيل ⊰• تعطيل •⊱ الالعاب
-●ـ▬ـ▬ـ▬ஜ۩۞۩ஜ▬ـ▬ـ▬ـ●
-📜╿•⊱امثله ༜ لعبه امثله قديمه
-🎰│•⊱معاني ༜ لعبه معاني لسمايلات 
-📋│•⊱اسئله ༜ لعبه اسئله عامه
-🎭│•⊱روليت ༜ لعبه الروليت الشهيره
-🤔│•⊱حزوره ༜ لعبه الحزورات
-🎨│•⊱ترتيب ༜ لعبه ترتيب الكلمات
-♻️│•⊱العكس ༜ لعبه عكس الكلمه
-🎁│•⊱تخمين ༜ لعبه تخمين الكلمه 
-🤹‍♂│•⊱الاسرع ༜ لعبه اسرع واحد 
-♻️│•⊱كت تويت ༜ لعبه التسليه 
-🔆│•⊱انجليزي ༜ لعبه ترجمة انجليزي
-♒│•⊱تفكيك ༜ لعبه تفكيك الكلمات
-✅│•⊱تركيب ༜ لعبه تركيب الكلمات
-🎯│•⊱رياضيات ༜ لعبة الرياضيات
-👊│•⊱محيبس ༜ لعبه محيبس الشهيره
-🚦╽•⊱المختلف ༜ لعبه اختلاف لسمايل
-●ـ▬ـ▬ـ▬ஜ۩۞۩ஜ▬ـ▬ـ▬ـ●
-🔰╿•⊱ نقاطي » لعرض عدد الارباح
-🔰│•⊱ بيع نقاطي + العدد » لستبدال
-🏅│•⊱ كل مجوهره ب 100 رساله
-💬│•⊱ للمزيد من المعلومات ، ء ! 
-👨‍💻╽•⊱ مـعـرف الـمـطـور  : ]]..SUDO_USER..[[
-]]
-GetUserID(msg.sender_user_id_,function(arg,data)
-msg = arg.msg
-local textD = redis:get(boss..":awamer_Klesha_games:")
-if textD then
-textD = Flter_Markdown(convert_Klmat(msg,data,textD,true))
-else
-textD = textMD
-end
-msg.textmsg = textD
-msg.Editeinline = true
-return SendMsgInline(msg)
-end,{msg=msg})
-return false
-end
-
 function UpdateM1Query(msg)
 list_settings = '{"inline_keyboard": ['
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
