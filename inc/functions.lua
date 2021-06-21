@@ -2,6 +2,9 @@
 #---------------------------------------------------------------------
 ]]
 
+if cmd == "biouser" then
+return SendMention(ChatID,UserID,MsgID,"~ ⪼ النبذه\n\n "..biouser.."",37,USERCAR)
+end
 
 function dl_cb(a,d)  end
 
