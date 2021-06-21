@@ -4117,12 +4117,16 @@ end
 
 
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
-local text = " ✧| » مرحبا بك في سورس اللهب الاسطوري السورس الافضل بالوطن العربي لشراء بوت بكامل حقوقك تواصل معنا عبر الضغط علئ احد الازرار بالاسفل "
-local inline = {
-{{text = '- SOURCE DEV .',url="https://t.me/PFPFF"}},
-{{text = '- CH ➥ LHB .',url="https://t.me/LSLHB"}},
-}   
-return send_inline(msg.chat_id_,text,inline,msg.id_)
+return [[
+Welcome To Source LHB
+
+- LHB TEAM
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+- [SOURCE Channel](https://t.me/LSLHB)
+
+- [TWASL Programmer](https://t.me/PFPFF)
+
+]]
 end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
