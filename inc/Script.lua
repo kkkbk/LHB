@@ -4118,24 +4118,13 @@ end
 
 if MsgText[1] == "سورس" or MsgText[1]=="السورس" then
 return [[
-Welcome To Source BoSs 
-
-- BOSS TEAM 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-- [Source Channel](https://t.me/LSLHB)
-
-- [Source Install](https://t.me/LSLHB/4121)
-
-- [Changing ID Channel](https://t.me/ksax4/1)
-
-- [Explanation Channel](https://t.me/SourceBoss/1)
-
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-- [Source Programmer](https://t.me/TH3BOSS)
-
-- [Twasl Bot Programmer](https://t.me/TH3BOSSBOT)
-
+✧| » مرحبا بك في سورس اللهب الاسطوري السورس الافضل بالوطن العربي لشراء بوت بكامل حقوقك تواصل معنا عبر الضغط علئ احد الازرار بالاسفل
 ]]
+local inline = {
+{{text = '- SOURCE DEV .',url="https://t.me/PFPFF"}},
+{{text = '- CH ➥ LHB .',url="https://t.me/LSLHB"}},
+}   
+return send_inline(msg.chat_id_,text,inline,msg.id_)
 end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
