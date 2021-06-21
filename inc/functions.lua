@@ -147,8 +147,7 @@ keyboardCmd = [[{
 "inline_keyboard": [
 [{"text": "◐ م1","callback_data": "List1"},{"text": "◐ م2","callback_data": "List2"},{"text": "◐ م3","callback_data": "List3"}],
 [{"text": "◐ م4","callback_data": "CmdSudo"},{"text": "◐ م5","callback_data": "List4"},{"text": "◐ م6","callback_data": "CmdFiles"}],
-[{"text": "الالعاب","callback_data": "List7"}]
-[{"text": "- اخفاء الامر","callback_data": "LoginOut"}]
+[{"text": "الالعاب","callback_data": "List7"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]
 ]}
 ]]
 
@@ -186,7 +185,7 @@ list_settings = '{"inline_keyboard": ['
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
-🤡│•⊱ الالعاب لبوت []]..redis:get(boss..':NameBot:')..[[]  ، ! 🎖
+🤡│•⊱ الالعاب 
 ⚙️│•⊱ لتفعيل الالعاب او تعطيلها ارسل
 🎖│•⊱ تفعـيل ⊰• تعطيل •⊱ الالعاب
 ●ـ▬ـ▬ـ▬ஜ۩۞۩ஜ▬ـ▬ـ▬ـ●
