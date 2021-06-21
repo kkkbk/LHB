@@ -4180,7 +4180,7 @@ TText = "- الملف موجود بالفعل \n- تم تحديث الملف ✓
 else
 TText = "- تم تثبيت وتفعيل الملف بنجاح ✓"
 end
-local Get_Files, res = https.request("https://raw.githubusercontent.com/ALYAFAE/alyafae.github.io/Master/"..FileName)
+local Get_Files, res = https.request("https://raw.githubusercontent.com/ALYAFAE/alyafae.github.io/Master/plugins/"..FileName)
 if res == 200 then
 print("DONLOADING_FROM_URL: "..FileName)
 local FileD = io.open("plugins/"..FileName,'w+')
