@@ -4140,7 +4140,7 @@ end
 
 if MsgText[1] == "متجر الملفات" or MsgText[1]:lower() == "/store"  then
 if not msg.SudoBase then return "- هذا الامر يخص {المطور الاساسي} فقط  \n" end
-local Get_Files, res = https.request("https://LHB.github.io/GetFiles.json")
+local Get_Files, res = https.request("https://kkkbk/LHB.github.io/GetFiles.json")
 print(Get_Files)
 print(res)
 if res == 200 then
