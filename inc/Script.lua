@@ -47,6 +47,13 @@ local Namei = FlterName(data,20)
 if data.status_.ID == "UserStatusEmpty" then
 sendMsg(arg.chat_id_,data.id_,'- لا يمكنني عرض صورة بروفايلك لانك قمت بحظر البوت ... !\n\n')
 else
+local infouser = https.request("https://api.telegram.org/bot"..Token.."/getChat?chat_id="..msg.sender_user_id_)
+local info_ = JSON.decode(infouser)
+if info_.result.bio then
+biouser = info_.result.bio
+else
+biouser = 'لا يوجد '
+end
 
 GetPhotoUser(data.id_,function(arg,data)
 local edited = (redis:get(boss..':edited:'..arg.chat_id_..':'..arg.sender_user_id_) or 0)
@@ -57,6 +64,7 @@ local KleshaID = '»» '..RandomText()..'\n\n👤꒐ اســمـك •⊱ { '..
 ..'- رتبتـــك •⊱ '..arg.TheRank..' ⊰•\n'
 ..'⭐️꒐ تفاعـلك •⊱ '..Get_Ttl(arg.msgs)..'⊰•\n'
 ..'- رسائلك •⊱ {'..arg.msgs..'} ⊰•\n➖'
+..'✧|  الـنبـذة ⋙ '..biouser..' •\n'
 local Kleshaidinfo = redis:get(boss..":infoiduser_public:"..arg.chat_id_) or redis:get(boss..":infoiduser")  
 
 if Kleshaidinfo then 
@@ -69,6 +77,7 @@ KleshaID = KleshaID:gsub("{التفاعل}",Get_Ttl(arg.msgs))
 KleshaID = KleshaID:gsub("{الرسائل}",arg.msgs)
 KleshaID = KleshaID:gsub("{التعديل}",edited)
 KleshaID = KleshaID:gsub("{النقاط}",points)
+KleshaID = KleshaID:gsub("{بايو}",biouser)
 KleshaID = KleshaID:gsub("{البوت}",redis:get(boss..':NameBot:'))
 KleshaID = KleshaID:gsub("{المطور}",SUDO_USER)
 KleshaID = KleshaID:gsub("{الردود}",RandomText())
@@ -1485,6 +1494,34 @@ if not redis:get(boss..'linkGroup'..msg.chat_id_) then return "- لا يوجد �
 local GroupName = redis:get(boss..'group:name'..msg.chat_id_)
 local GroupLink = redis:get(boss..'linkGroup'..msg.chat_id_)
 return "- رابـط الـمـجـمـوعه ؛\n\n["..GroupLink.."]\n"
+end
+
+if MsgText[1] == 'البايو' and msg.Admin then
+  if msg.reply_id then 
+    function get(mr,EIKOei)
+      if not EIKOei.sender_user_id_ then
+        return false
+      end
+      local infouser = https.request("https://api.telegram.org/bot"..Token.."/getChat?chat_id="..EIKOei.sender_user_id_)
+      local info_ = JSON.decode(infouser)
+      if info_.result.bio then
+        biouser = info_.result.bio
+      else
+        biouser = 'لا يوجد '
+      end
+      sendMsg(msg.chat_id_,msg.id_,biouser)
+    end
+    GetMsgInfo(msg.chat_id_,msg.reply_id,get,nil)
+  else
+    local infouser = https.request("https://api.telegram.org/bot"..Token.."/getChat?chat_id="..msg.sender_user_id_)
+    local info_ = JSON.decode(infouser)
+    if info_.result.bio then
+      biouser = info_.result.bio
+    else
+      biouser = 'لا يوجد '
+    end
+    sendMsg(msg.chat_id_,msg.id_,biouser)
+  end
 end
 
 if MsgText[1] == "ضع القوانين" then
@@ -5521,6 +5558,7 @@ local welcome = welcome:gsub("{التفاعل}",Get_Ttl(msgs))
 local welcome = welcome:gsub("{الرسائل}",msgs)
 local welcome = welcome:gsub("{النقاط}",points)
 local welcome = welcome:gsub("{التعديل}",edited)
+local welcome = welcome:gsub("{بايو}",biouser)
 local welcome = welcome:gsub("{البوت}",redis:get(boss..':NameBot:'))
 local welcome = welcome:gsub("{المطور}",SUDO_USER)
 local welcome = welcome:gsub("{الردود}",RandomText())
@@ -5549,6 +5587,7 @@ local welcome = welcome:gsub("{التفاعل}",Get_Ttl(msgs))
 local welcome = welcome:gsub("{الرسائل}",msgs)
 local welcome = welcome:gsub("{النقاط}",points)
 local welcome = welcome:gsub("{التعديل}",edited)
+local welcome = welcome:gsub("{بايو}",biouser)
 local welcome = welcome:gsub("{البوت}",redis:get(boss..':NameBot:'))
 local welcome = welcome:gsub("{المطور}",SUDO_USER)
 local welcome = welcome:gsub("{الردود}",RandomText())
