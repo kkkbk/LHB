@@ -178,6 +178,7 @@ print(rr)
 end
 function UpdateM1Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "التالي","callback_data": "List2"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
