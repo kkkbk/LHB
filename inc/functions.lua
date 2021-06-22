@@ -503,8 +503,6 @@ list_settings = '{"inline_keyboard": ['
 ..'[{"text": " الويب » '..(redis:get(boss..'lock_webpage'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_webpage"},'
 ..'{"text": " الماركدوان » '..(redis:get(boss..'lock_markdown'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_markdown"}],'
 
-..'[{"text": " البوتات بالطرد » '..(redis:get(boss..'lock_bots_by_kick'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_bots_by_kick"}],'
-
 ..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"},'
 ..'{"text": " البوتات » '..(redis:get(boss..'lock_bots'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_bots"}],'
 
@@ -533,24 +531,24 @@ end
 function UpdateMediaSitting(msg)
 list_settings = '{"inline_keyboard": ['
 ..'[{"text": " المتحركه » '..(redis:get(boss..'mute_gif'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_gif"},'
-..'{"text": " الدردشه » '..(redis:get(boss..'mute_text'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_text"}],'
+..'{"text": " الــدردشه » '..(redis:get(boss..'mute_text'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_text"}],'
 
-..'[{"text": " الانلاين » '..(redis:get(boss..'mute_inline'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_inline"},'
-..'{"text": " الالعاب » '..(redis:get(boss..'mute_game'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_game"}],'
+..'[{"text": " الانــلاين » '..(redis:get(boss..'mute_inline'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_inline"},'
+..'{"text": " الالـعــاب » '..(redis:get(boss..'mute_game'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_game"}],'
 
-..'[{"text": " الصور » '..(redis:get(boss..'mute_photo'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_photo"},'
-..'{"text": " الفيديو » '..(redis:get(boss..'mute_video'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_video"}],'
+..'[{"text": " الــصـور » '..(redis:get(boss..'mute_photo'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_photo"},'
+..'{"text": " الـفيديو » '..(redis:get(boss..'mute_video'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_video"}],'
 
 ..'[{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
 
-..'[{"text": " الصوت » '..(redis:get(boss..'mute_audio'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_audio"},'
+..'[{"text": " الـصوت » '..(redis:get(boss..'mute_audio'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_audio"},'
 ..'{"text": " البصمات » '..(redis:get(boss..'mute_voice'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_voice"}],'
 
 ..'[{"text": " الملصقات » '..(redis:get(boss..'mute_sticker'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_sticker"},'
-..'{"text": " الجهات » '..(redis:get(boss..'mute_contact'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_contact"}],'
+..'{"text": " الـجـهـات » '..(redis:get(boss..'mute_contact'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_contact"}],'
 
-..'[{"text": " الموقع » '..(redis:get(boss..'mute_location'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_location"},'
-..'{"text": " الملفات » '..(redis:get(boss..'mute_document'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_document"}],'
+..'[{"text": " الـمـوقع » '..(redis:get(boss..'mute_location'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_location"},'
+..'{"text": " الـملـفات » '..(redis:get(boss..'mute_document'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_document"}],'
 ..'[{"text": "- رجوع » ","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 
 ..']}'
