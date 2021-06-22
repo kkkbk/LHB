@@ -245,7 +245,7 @@ return false
 end
 function UpdateM2Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "List3"},{"text": "السابق","callback_data": "List1"}],'
+..'[{"text": "التالي","callback_data": "List3"},'..'{"text": "السابق","callback_data": "List1"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
