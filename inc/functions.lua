@@ -522,7 +522,12 @@ list_settings = '{"inline_keyboard": ['
 list_settings = list_settings:gsub('true', '{✅}')
 list_settings = list_settings:gsub('false', '{❌}')
 msg.KeyboardCmd = list_settings
-msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك التحكم بقفولات البوت ."
+msg.textmsg = "🙋‍♂ - اهلا بك عزيزي في  لستة الاوامر 
+✅ - الان يمكنك قفل وفتح الاعدادات
+عبر الضغط على الازرار
+✅ تعني مفتوح
+❌ تعني مقف
+"
 msg.Editeinline = true
 return SendMsgInline(msg)
 end
@@ -553,7 +558,11 @@ list_settings = '{"inline_keyboard": ['
 
 list_settings = list_settings:gsub('true', '{✅}')
 list_settings = list_settings:gsub('false', '{❌}')
-msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك قفل وفتح الوسائط ."
+msg.textmsg = "🙋‍♂ - اهلا بك عزيزي في  لستة الاوامر 
+✅ - الان يمكنك قفل وفتح الوسائط 
+عبر الضغط على الازرار
+✅ تعني مفتوح
+❌ تعني مقفل"
 msg.KeyboardCmd = list_settings
 msg.Editeinline = true
 return SendMsgInline(msg)
@@ -589,7 +598,11 @@ list_settings = '{"inline_keyboard": ['
 
 list_settings = list_settings:gsub('true', '{✅}')
 list_settings = list_settings:gsub('false', '{❌}')
-msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك تفعيل وتعطيل الاعدادات ."
+msg.textmsg = "🙋‍♂ - اهلا بك عزيزي في  لستة الاوامر 
+✅ - الان يمكنك تفعيل وتعطيل الاعدادات عبر الازرار
+✅ تعني مفتوح
+❌ تعني مقف
+"
 msg.KeyboardCmd = list_settings
 msg.Editeinline = true
 return SendMsgInline(msg)
