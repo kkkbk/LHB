@@ -183,7 +183,7 @@ list_settings = '{"inline_keyboard": ['
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[- اهلا بك في قائمة اوامر الاداريين
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ﹎﹎﹎﹎﹎اوامر الرفع والتنزيل﹎﹎﹎﹎﹎
 - رفع - تنزيل منشى اساسي
 - رفع - تنزيل مشرف
@@ -228,7 +228,9 @@ textMD = [[- اهلا بك في قائمة اوامر الاداريين
 - الغاء منع + الكلمه
 - طرد البوتات
 - طرد المحذوفين
-- كشف البوتات]]
+- كشف البوتات 
+ـــــــــــــــــــــــــــــــــــــــــــــــ
+]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
 local textD = redis:get(boss..":awamer_Klesha_m1:")
@@ -251,7 +253,7 @@ list_settings = '{"inline_keyboard": ['
 msg.KeyboardCmd = list_settings
 textMD = [[
 - اهلا بك في قائمة اوامر المجموعه
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ﹎﹎﹎﹎اوامر الوضع ﹎﹎﹎﹎
 - ضع الترحيب
 - ضع القوانين
@@ -278,6 +280,7 @@ textMD = [[
 - الوسائط
 - الاعدادت
 - المجموعه 
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -296,12 +299,13 @@ end
 
 function UpdateM3Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "التالي","callback_data": "List4"},'..'{"text": "السابق","callback_data": "List2"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
 - اهلا بك في قائمة الحماية
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ﹎﹎﹎ اوامر القفل والفتح بالمسح ﹎﹎﹎
 - قفل - فتح التعديل  
 -️ قفل - فتح البصمات 
@@ -354,7 +358,7 @@ textMD = [[
 - تفعيل - تعطيل التحقق 
 - تفعيل - تعطيل ردود السورس 
 - تفعيل - تعطيل التنظيف التلقائي 
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -374,13 +378,13 @@ end
 
 function UpdateM4Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "التالي","callback_data": "CmdSudo"},'..'{"text": "السابق","callback_data": "List3"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
 - اهلا بك في قائمة اوامر الردود
-
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 -  جميع اوامر الردود 
 - الردود : لعرض الردود المثبته
 -  اضف رد : لاضافه رد جديد
@@ -389,6 +393,7 @@ textMD = [[
 -  اضف رد عام : لاضافه رد لكل المجموعات
 -  مسح رد عام : لمسح الرد العام 
 - مسح الردود العامه : لمسح كل ردود العامه 
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -407,11 +412,12 @@ end
 
 function UpdateM5Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "التالي","callback_data": "CmdFiles"},'..'{"text": "السابق","callback_data": "List4"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[ - اهلا بك في قائمة اوامر المطورين
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 - تفعيل
 - تعطيل
 - اسم بوتك + غادر
@@ -433,7 +439,9 @@ textMD = [[ - اهلا بك في قائمة اوامر المطورين
 - تعيين ايدي عام
 - مسح ايدي عام
 - تفعيل / تعطيل تعيين الايدي
-- تحديث]] 
+- تحديث
+ـــــــــــــــــــــــــــــــــــــــــــــــ
+]] 
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
 local textD = redis:get(boss..":awamer_Klesha_mtwr:")
@@ -451,17 +459,20 @@ end
 
 function UpdateM6Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "القائمة الرئيسية","callback_data": "CmdBack"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[ - اهلا بك في قائمة اوامر الملفات
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 - اوامر الملفات
-
+ـــــــــــــــــــــــــــــــــــــــــــــــ
 -  `/files`  لعرض قائمه الملفات 
 -  `/store`  لعرض متجر الملفات 
 -  `sp file.lua`   تثبيت الملف 
--  `dp file.lua`  الملف المراد حذفه ]]
+-  `dp file.lua`  الملف المراد حذفه
+ـــــــــــــــــــــــــــــــــــــــــــــــ
+ ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
 local textD = redis:get(boss..":awamer_Klesha_mf:")
