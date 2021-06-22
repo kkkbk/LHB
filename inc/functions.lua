@@ -178,7 +178,7 @@ print(rr)
 end
 function UpdateM1Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "List2"}],'
+..'[{"text": "◐ الـتـالـي ◐","callback_data": "List2"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
@@ -247,7 +247,7 @@ return false
 end
 function UpdateM2Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "List3"},'..'{"text": "السابق","callback_data": "List1"}],'
+..'[{"text": "◐ الـتـالـي ◐","callback_data": "List3"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List1"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
@@ -299,7 +299,7 @@ end
 
 function UpdateM3Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "List4"},'..'{"text": "السابق","callback_data": "List2"}],'
+..'[{"text": "◐ الـتـالـي ◐","callback_data": "List4"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List2"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
@@ -378,7 +378,7 @@ end
 
 function UpdateM4Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "CmdSudo"},'..'{"text": "السابق","callback_data": "List3"}],'
+..'[{"text": "◐ الـتـالـي ◐","callback_data": "CmdSudo"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List3"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
@@ -412,7 +412,7 @@ end
 
 function UpdateM5Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "التالي","callback_data": "CmdFiles"},'..'{"text": "السابق","callback_data": "List4"}],'
+..'[{"text": "◐ التـالـي ◐","callback_data": "CmdFiles"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List4"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
@@ -459,6 +459,7 @@ end
 
 function UpdateM6Query(msg)
 list_settings = '{"inline_keyboard": ['
+..'[{"text": "◐ الـتـالـي ◐","callback_data": "List3"},'..'{"text": "◐ الـسابـق ◐","callback_data": "List1"}],'
 ..'[{"text": "القائمة الرئيسية","callback_data": "CmdBack"}],'
 ..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 ..']}'
