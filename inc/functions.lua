@@ -503,7 +503,9 @@ list_settings = '{"inline_keyboard": ['
 ..'[{"text": " الويب » '..(redis:get(boss..'lock_webpage'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_webpage"},'
 ..'{"text": " الماركدوان » '..(redis:get(boss..'lock_markdown'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_markdown"}],'
 
-..'[{"text": " البوتات بالطرد » '..(redis:get(boss..'lock_bots_by_kick'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_bots_by_kick"},'
+..'[{"text": " البوتات بالطرد » '..(redis:get(boss..'lock_bots_by_kick'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_bots_by_kick"}],'
+
+..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"}],'
 ..'{"text": " البوتات » '..(redis:get(boss..'lock_bots'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_bots"}],'
 
 ..'[{"text": " الاضافه » '..(redis:get(boss..'lock_Add'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_Add"},'
@@ -538,6 +540,8 @@ list_settings = '{"inline_keyboard": ['
 
 ..'[{"text": " الصور » '..(redis:get(boss..'mute_photo'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_photo"},'
 ..'{"text": " الفيديو » '..(redis:get(boss..'mute_video'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_video"}],'
+
+..'[{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
 
 ..'[{"text": " الصوت » '..(redis:get(boss..'mute_audio'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_audio"},'
 ..'{"text": " البصمات » '..(redis:get(boss..'mute_voice'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_voice"}],'
@@ -579,9 +583,6 @@ list_settings = '{"inline_keyboard": ['
 
 ..'{"text": " الحمايه » '..(redis:get(boss..'antiedit'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#antiedit"}],'
 ..'[{"text": " الايدي بالصوره » '..(redis:get(boss..'idphoto'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#idphoto"}],'
-
-..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"},'
-..'{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
 
 ..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 
