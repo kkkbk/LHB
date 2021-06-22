@@ -519,8 +519,8 @@ list_settings = '{"inline_keyboard": ['
 
 ..']}'
 
-list_settings = list_settings:gsub('true', '{✔️}')
-list_settings = list_settings:gsub('false', '{✖️}')
+list_settings = list_settings:gsub('true', '{✅}')
+list_settings = list_settings:gsub('false', '{❌}')
 msg.KeyboardCmd = list_settings
 msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك التحكم بقفولات البوت ."
 msg.Editeinline = true
@@ -551,8 +551,8 @@ list_settings = '{"inline_keyboard": ['
 
 ..']}'
 
-list_settings = list_settings:gsub('true', '{✔️}')
-list_settings = list_settings:gsub('false', '{✖️}')
+list_settings = list_settings:gsub('true', '{✅}')
+list_settings = list_settings:gsub('false', '{❌}')
 msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك قفل وفتح الوسائط ."
 msg.KeyboardCmd = list_settings
 msg.Editeinline = true
@@ -567,29 +567,26 @@ list_settings = '{"inline_keyboard": ['
 
 ..'[{"text": " الترحيب » '..(redis:get(boss..'welcome:get'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#welcome:get"},'
 ..'{"text": " الردود » '..(redis:get(boss..'replay'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#replay"}],'
+..'[{"text": " الردود العشوائيه » '..(redis:get(boss..'lock_tag'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_tag"}],'
 
-..'[{"text": " الردود العشوائيه » '..(redis:get(boss..'lock_tag'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_tag"},'
-..'{"text": " التحذير » '..(redis:get(boss..'lock_woring'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_woring"}],'
+..'[{"text": " التحذير » '..(redis:get(boss..'lock_woring'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_woring"},'
+..'{"text": " تاك » '..(redis:get(boss..'lock_RandomRdod'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_RandomRdod"},'
+..'[{"text": " الرابط » '..(redis:get(boss..'lock_linkk'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_linkk"},'
+..'{"text": " المغادره » '..(redis:get(boss..'lock_leftgroup'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_leftgroup"}],'
+..'[{"text": " الحظر » '..(redis:get(boss..'lock_KickBan'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_KickBan"},'
+..'{"text": " الحمايه » '..(redis:get(boss..'antiedit'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#antiedit"}],'
+..'[{"text": " الايدي بالصوره » '..(redis:get(boss..'idphoto'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#idphoto"}],'
 
-..'[{"text": " تاك » '..(redis:get(boss..'lock_RandomRdod'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_RandomRdod"},'
-..'{"text": " الرابط » '..(redis:get(boss..'lock_linkk'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_linkk"}],'
-
-..'[{"text": " المغادره » '..(redis:get(boss..'lock_leftgroup'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_leftgroup"},'
-..'{"text": " الحظر » '..(redis:get(boss..'lock_KickBan'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_KickBan"}],'
-
-..'[{"text": " الحمايه » '..(redis:get(boss..'antiedit'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#antiedit"},'
-..'{"text": " الايدي بالصوره » '..(redis:get(boss..'idphoto'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#idphoto"}],'
-
-..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"},'
-..'{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
+..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"}],'
+..'[{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
 
 ..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
 
 
 ..']}'
 
-list_settings = list_settings:gsub('true', '{✔️}')
-list_settings = list_settings:gsub('false', '{✖️}')
+list_settings = list_settings:gsub('true', '{✅}')
+list_settings = list_settings:gsub('false', '{❌}')
 msg.textmsg = "- اهلا بك في لستة الاوامر .\n- الان يمكنك تفعيل وتعطيل الاعدادات ."
 msg.KeyboardCmd = list_settings
 msg.Editeinline = true
@@ -879,7 +876,7 @@ function getr(br)
 if br then
 return "✓"
 else
-return "✖️"
+return "❌"
 end
 end
 
