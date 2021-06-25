@@ -113,13 +113,13 @@ if not TokenBot then
 print('\27[0;33m>>'..[[
 
 
-مرحباآ بك في سورس اللهب الاسطوري 
+مرحباآ بك في سورس ابو سعد
 
 
 
-قناة السورس @LSLHB
+قناة السورس @EE6EE
 
-مطور السورس @PFPFF
+مطور السورس @jjjij
 ---------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config()
@@ -153,13 +153,13 @@ end
 print('\27[0;33m>>'..[[
 
 
-مرحباآ بك في سورس اللهب الاسطوري 
+مرحباآ بك في سورس ابو سعد
 
 
 
-قناة السورس @LSLHB
+قناة السورس @ee6ee
 
-مطور السورس @PFPFF
+مطور السورس @jjjij
 -------------------------------------------------------------------
 
 ]]..'\027[0;32m'
@@ -284,32 +284,32 @@ msg.TheRankCmd = 'مطور السورس'
 msg.TheRank = 'مطور السورس'
 msg.Rank = 1
 elseif msg.sender_user_id_ == SUDO_ID then 
-msg.TheRankCmd = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or 'المطور الاساسي' 
-msg.TheRank = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or 'مطور اساسي 👨🏻‍✈️' 
+msg.TheRankCmd = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or 'Mishary' 
+msg.TheRank = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or 'Mishary'
 msg.Rank = 1
 elseif redis:sismember(boss..':SUDO_BOT:',msg.sender_user_id_) then 
-msg.TheRankCmd = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'المطور'
-msg.TheRank = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'مطور البوت 👨🏽‍💻'
+msg.TheRankCmd = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'Dev'
+msg.TheRank = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'Dev'
 msg.Rank = 2
 elseif msg.GroupActive and redis:sismember(boss..':Malk_Group:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك'
-msg.TheRank = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك 👲🏼'
+msg.TheRank = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك '
 msg.Rank = 22
 elseif msg.GroupActive and redis:sismember(boss..':MONSHA_Group:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'منشئ اساسي'
-msg.TheRank = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'منشئ اساسي 👲🏼'
+msg.TheRank = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'منشئ اساسي'
 msg.Rank = 11
 elseif msg.GroupActive and redis:sismember(boss..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew4:"..msg.chat_id_) or 'المنشىء'
-msg.TheRank = redis:get(boss..":RtbaNew4:"..msg.chat_id_) or 'المنشىء 👷🏽'
+msg.TheRank = redis:get(boss..":RtbaNew4:"..msg.chat_id_) or 'المنشىء '
 msg.Rank = 3
 elseif msg.GroupActive and redis:sismember(boss..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew5:"..msg.chat_id_) or 'المدير' 
-msg.TheRank = redis:get(boss..":RtbaNew5:"..msg.chat_id_) or 'مدير البوت 👨🏼‍⚕️' 
+msg.TheRank = redis:get(boss..":RtbaNew5:"..msg.chat_id_) or 'مدير البوت '
 msg.Rank = 4
 elseif msg.GroupActive and redis:sismember(boss..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew6:"..msg.chat_id_) or 'الادمن'
-msg.TheRank = redis:get(boss..":RtbaNew6:"..msg.chat_id_) or 'ادمن في البوت 👨🏼‍🎓'
+msg.TheRank = redis:get(boss..":RtbaNew6:"..msg.chat_id_) or 'ادمن في البوت '
 msg.Rank = 5
 elseif msg.GroupActive and redis:sismember(boss..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRank = redis:get(boss..":RtbaNew7:"..msg.chat_id_) or 'عضو مميز'
@@ -317,7 +317,7 @@ msg.Rank = 6
 elseif msg.sender_user_id_ == our_id then
 msg.Rank = 7
 else
-msg.TheRank = 'فقط عضو 🙍🏼‍♂️'
+msg.TheRank = 'فقط عضو '
 msg.Rank = 10 
 end
 
@@ -373,10 +373,14 @@ kick_user(msg.sender_user_id_, msg.chat_id_)
 end
 if msg.content_.members_[0].id_ == our_id and redis:get(boss..':WELCOME_BOT') then
 SUDO_USER = redis:hgetall(boss..'username:'..SUDO_ID).username
-sendPhoto(msg.chat_id_,msg.id_,redis:get(boss..':WELCOME_BOT'),[[- مـرحبا انا بوت اسـمـي ]]..redis:get(boss..':NameBot:')..[[ 🎖
-- اختصـاصـي حمـاية‏‏ المـجمـوعات
-- مـن السـبام والتوجية‏‏ والتگرار والخ...
-- مـعرف المـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
+sendPhoto(msg.chat_id_,msg.id_,redis:get(boss..':WELCOME_BOT'),[[⤶ اهلين انا ]]..redis:get(boss..':NameBot:')..[[ 
+اختصاصي حمايه المجموعات من السبام والتكرار والتوجه والخ..
+
+⇠ كت تويت واشياء كثير..
+
+↞ عشان تفعلني ارفعني مشرف وارسل تفعيل.
+━┉ ┉ ┉ ┉ ┉ ┉ ┉━
+↫ مطوري  ]]..SUDO_USER:gsub([[\_]],'_')..[[ 
 ]])
 return false
 end
@@ -407,8 +411,8 @@ Del_msg(msg.chat_id_,msg.id_)
 return false 
 else
 if redis:get(boss.."lock_check"..msg.chat_id_) and not redis:get(boss..":TqeedUser:"..msg.chat_id_..Senderid) then
-local text = "- اهلاً بك في المجموعة\n- للتأكد بأنك لست { ربوت }\n- تم تقييدك اضغط الزر بالاسفل\n- للتأكد انك { عضو حقيقي }"
-local inline = {{{text="- أضـغط ۿـنا للتـأكد أنك لست ربوت ♻️",callback_data="CheckRobotJoin:"..Senderid}}}
+local text = "اهليين تم تقييدك \nعشان نتأكد أنك شخص حقيقي \nاضغط الزر الي تحت عشان تقدر ترسل"
+local inline = {{{text="فك التقييد",callback_data="CheckRobotJoin:"..Senderid}}}
 Restrict(msg.chat_id_,Senderid,1)
 return send_inline(msg.chat_id_,text,inline,msg.id_)
 end
