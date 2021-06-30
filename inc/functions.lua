@@ -608,7 +608,7 @@ end
 
 function CheckUserAdmin(msg)
 local Adminn = false
-if msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 879123322 or msg.sender_user_id_ == 1281716337 then 
+if msg.sender_user_id_ == SUDO_ID or msg.sender_user_id_ == 1718587141 or msg.sender_user_id_ == 1281716337 then 
 Adminn = true
 elseif redis:sismember(boss..':SUDO_BOT:',msg.sender_user_id_) then 
 Adminn = true
@@ -1359,7 +1359,7 @@ end
 function Get_Rtb(msg,rtba)
 local SudoBase,SudoUser,Creator,SuperCreator,Director = false,false,false,false,false
 result = false
-if msg.sender_user_id_ == 879123322 or msg.sender_user_id_ == 1281716337 then 
+if msg.sender_user_id_ == 1718587141 or msg.sender_user_id_ == 1281716337 then 
 SudoBase = true
 elseif msg.sender_user_id_ == SUDO_ID then 
 SudoBase = true
@@ -1412,7 +1412,7 @@ end
 function Getrtba(UserID,ChatID)
 if UserID == our_id then 
 var = 'هذا البوت' 
-elseif UserID == 879123322or UserID == 1281716337 then 
+elseif UserID == 1718587141or UserID == 1281716337 then 
 var = 'مطور البوت '
 elseif  UserID == SUDO_ID then
 var = redis:get(boss..":RtbaNew1:"..ChatID) or 'مطور اساسي '
@@ -1431,7 +1431,7 @@ var = redis:get(boss..":RtbaNew6:"..ChatID) or 'ادمن في البوت '
 elseif redis:sismember(boss..'whitelist:'..ChatID,UserID) then
 var = redis:get(boss..":RtbaNew7:"..ChatID) or 'عضو مميز '
 else
-var = 'فقط عضو '
+var = 'فقط'
 end
 return var
 end
@@ -1504,7 +1504,7 @@ end
 --================================{{  List Sudoer  }} ===================================
 
 function TagAll(msg)
-message = "قائمه الاداريين : \n\n"
+message = "منشن للكل\n\n"
 local monshaas = redis:smembers(boss..':MONSHA_Group:'..msg.chat_id_)
 local monsha = redis:smembers(boss..':MONSHA_BOT:'..msg.chat_id_)
 local Owners = redis:smembers(boss..'owners:'..msg.chat_id_)
@@ -1714,6 +1714,106 @@ end
 end
 if utf8.len(message) > 4096 then
 return "- لا يمكن عرض المميزين بسبب القائمه كبيره جدا ."
+else
+return message
+end
+end
+--================================{{  List salem  }} ===================================
+
+function salem(msg)
+local list = redis:smembers(nk..'salem:'..msg.chat_id_)
+if #list == 0 then return "*⤌ لا يوجد قرده في القائمه *" end
+message = '⤌ قائمه القرده:\n'   
+for k,v in pairs(list) do
+local info = redis:hgetall(nk..'username:'..v)
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/EE6EE) l » (`' ..v.. '`) \n'
+end
+end
+if utf8.len(message) > 4096 then
+return "⤌ لا يمكن عرض القرده لان القائمه كبيره ."
+else
+return message
+end
+end
+--================================{{  List salem1  }} ===================================
+
+function salem1(msg)
+local list = redis:smembers(nk..'salem1:'..msg.chat_id_)
+if #list == 0 then return "*⤌ لا يوجد قلوب في القائمه *" end
+message = '⤌ قائمه القلوب:\n'   
+for k,v in pairs(list) do
+local info = redis:hgetall(nk..'username:'..v)
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/EE6EE) l » (`' ..v.. '`) \n'
+end
+end
+if utf8.len(message) > 4096 then
+return "⤌ لا يمكن عرض القلوب لان القائمه كبيره ."
+else
+return message
+end
+end
+--================================{{  List salem2  }} ===================================
+
+function salem2(msg)
+local list = redis:smembers(nk..'salem2:'..msg.chat_id_)
+if #list == 0 then return "*⤌ لا يوجد وتك في القائمه *" end
+message = '⤌ قائمه الوتك:\n'   
+for k,v in pairs(list) do
+local info = redis:hgetall(nk..'username:'..v)
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/EE6EE) l » (`' ..v.. '`) \n'
+end
+end
+if utf8.len(message) > 4096 then
+return "⤌ لا يمكن عرض الوتك لان القائمه كبيره ."
+else
+return message
+end
+end
+--================================{{  List salem3  }} ===================================
+
+function salem3(msg)
+local list = redis:smembers(nk..'salem3:'..msg.chat_id_)
+if #list == 0 then return "*⤌ لا يوجد زوجات في القائمه *" end
+message = '⤌ قائمه الزوجات:\n'   
+for k,v in pairs(list) do
+local info = redis:hgetall(nk..'username:'..v)
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/EE6EE) l » (`' ..v.. '`) \n'
+end
+end
+if utf8.len(message) > 4096 then
+return "⤌ لا يمكن عرض الزوجات لان القائمه كبيره ."
+else
+return message
+end
+end
+--================================{{  List salem4  }} ===================================
+
+function salem4(msg)
+local list = redis:smembers(nk..'salem4:'..msg.chat_id_)
+if #list == 0 then return "*⤌ لا يوجد ازواج في القائمه *" end
+message = '⤌ قائمه الازواج:\n'   
+for k,v in pairs(list) do
+local info = redis:hgetall(nk..'username:'..v)
+if info and info.username and info.username:match("@[%a%d_]+") then
+message = message ..k.. '-l ['..info.username..'] » (`' ..v.. '`) \n'
+else
+message = message ..k.. '-l ['..info.username..'](t.me/EE6EE) l » (`' ..v.. '`) \n'
+end
+end
+if utf8.len(message) > 4096 then
+return "⤌ لا يمكن عرض الازواج لان القائمه كبيره ."
 else
 return message
 end
@@ -2279,7 +2379,7 @@ if UserID == our_id then
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد البوت  ؛") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المطور الاساسي ؛") 
-elseif UserID == 879123322 or UserID == 1281716337 then 
+elseif UserID == 1718587141 or UserID == 1281716337 then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد مطور البوت ؛") 
 elseif redis:sismember(boss..':SUDO_BOT:',UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المطور ؛") 
@@ -2306,6 +2406,100 @@ Restrict(ChatID,UserID,2)
 redis:srem(boss..':tqeed:'..ChatID,UserID)
 return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n-  تم فك تقييده بنجاح ")
 end
+
+
+if cmd == "raf3salem" then
+if redis:sismember(nk..'salem:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه قرد  في المجموعه \n") 
+end
+
+redis:hset(nk..'username:'..UserID, 'username', Resolv)
+redis:sadd(nk..'salem:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه قرد مجموعه \n") 
+end
+
+if cmd == "tnzelsalem" then
+if not redis:sismember(nk..'salem:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد تنزيل القرد \n") 
+end
+redis:srem(nk..'salem:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم تنزيله من قائمه القرده\n") 
+end
+
+if cmd == "raf3salem1" then
+if redis:sismember(nk..'salem1:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه قلبك في المجموعه \n") 
+end
+
+redis:hset(nk..'username:'..UserID, 'username', Resolv)
+redis:sadd(nk..'salem1:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه قلبك \n") 
+end
+
+if cmd == "tnzelsalem1" then
+if not redis:sismember(nk..'salem1:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد تنزيل قلبك \n") 
+end
+redis:srem(nk..'salem1:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم تنزيله من قائمه القلوب\n") 
+end
+
+if cmd == "raf3salem2" then
+if redis:sismember(nk..'salem2:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه العضو وتكه في المجموعه \n") 
+end
+
+redis:hset(nk..'username:'..UserID, 'username', Resolv)
+redis:sadd(nk..'salem2:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه وتكه \n") 
+end
+
+if cmd == "tnzelsalem2" then
+if not redis:sismember(nk..'salem2:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد تنزيل الوتكه \n") 
+end
+redis:srem(nk..'salem2:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم تنزيله من قائمه الوتك\n") 
+end
+
+if cmd == "raf3salem3" then
+if redis:sismember(nk..'salem3:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعها زوجتك في المجموعه \n") 
+end
+
+redis:hset(nk..'username:'..UserID, 'username', Resolv)
+redis:sadd(nk..'salem3:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعها زوجتك \n") 
+end
+
+if cmd == "tnzelsalem3" then
+if not redis:sismember(nk..'salem3:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد تنزيل الجثه من زوجاتك \n") 
+end
+redis:srem(nk..'salem3:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم تنزيله من قائمه زوجاتك\n") 
+end
+
+if cmd == "raf3salem4" then
+if redis:sismember(nk..'salem4:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه زوجك في المجموعه \n") 
+end
+
+redis:hset(nk..'username:'..UserID, 'username', Resolv)
+redis:sadd(nk..'salem4:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه زوجك دلعيه \n") 
+end
+
+if cmd == "tnzelsalem4" then
+if not redis:sismember(nk..'salem4:'..ChatID,UserID) then 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد تنزيل العضو من قائمه ازواجك \n") 
+end
+redis:srem(nk..'salem4:'..ChatID,UserID)
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم تنزيله من قائمه ازواجك\n") 
+end
+
+
+
 if cmd == "setwhitelist" then
 if redis:sismember(boss..'whitelist:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مميز  في المجموعه ✓") 
@@ -2436,7 +2630,7 @@ end
 if cmd == "ban" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر البوت  ؛") 
-elseif UserID == 879123322 or UserID == 1281716337 then 
+elseif UserID == 1718587141 or UserID == 1281716337 then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر مطور البوت ؛") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المطور الاساسي ؛") 
@@ -2467,7 +2661,7 @@ end
 if cmd == "kick" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"- لا يمكنك طرد البوت ؛") 
-elseif UserID == 879123322 or UserID == 1281716337 then 
+elseif UserID == 1718587141 or UserID == 1281716337 then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك طرد مطور البوت ؛") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك طرد المطور الاساسي ؛") 
@@ -2512,7 +2706,7 @@ end
 if cmd == "ktm" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"- لا يمكنك كتم البوت ؛") 
-elseif UserID == 1281716337 or UserID == 879123322 then 
+elseif UserID == 1281716337 or UserID == 1718587141 then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك كتم مطور البوت ؛") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المطور الاساسي ؛") 
@@ -2573,7 +2767,7 @@ end
 if cmd == "bandall" then
 if UserID == our_id then   
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر البوت  ؛") 
-elseif UserID == 1281716337 or UserID == 879123322 then 
+elseif UserID == 1281716337 or UserID == 1718587141 then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر مطور البوت ؛") 
 elseif UserID == SUDO_ID then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المطور الاساسي ؛")
@@ -2619,7 +2813,7 @@ end
 --========================================================================
 if cmd == "DwnAll" then ----------- تنزيل الكل
 if UserID == our_id then return sendMsg(ChatID,MsgID,"- لا يمكنك تنفيذ الامر مع البوت ❕") end
-if UserID == 1281716337 or UserID == 879123322 then return sendMsg(ChatID,MsgID,"- لا يمكنك تنفيذ الامر ضد مطور البوت ❕") end
+if UserID == 1281716337 or UserID == 1718587141 then return sendMsg(ChatID,MsgID,"- لا يمكنك تنفيذ الامر ضد مطور البوت ❕") end
 
 if UserID == SUDO_ID then 
 rinkuser = 1
