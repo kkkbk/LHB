@@ -137,7 +137,7 @@ end
 
 
 if MsgText[1] == "تغير الرتبه"  or MsgText[1] == "تغير رتبه" then    
-if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المنشئ الاساسي,المطور} بس  \n" end
+if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المالك,المطور} بس  \n" end
 redis:setex(boss..":Witing_NewRtba:"..msg.chat_id_..msg.sender_user_id_,1000,true)
 redis:del(boss..":Witting_NewRtba2:"..msg.chat_id_..msg.sender_user_id_)
 return [[
@@ -155,7 +155,7 @@ end
 
 
 if MsgText[1] == "مسح الرتبه" or MsgText[1] ==  "مسح رتبه" then    
-if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المنشئ الاساسي,المطور} بس  \n" end
+if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المالك,المطور} بس  \n" end
 redis:setex(boss..":Witing_DelNewRtba:"..msg.chat_id_..msg.sender_user_id_,1000,true)
 return [[
 ⇠ تمام، ارسل الرتبه اللي تبي تحذفها 
@@ -184,7 +184,7 @@ end
 
 
 if MsgText[1] == "قائمه الرتب" then
-if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المنشئ الاساسي,المطور} بس  \n" end
+if not msg.SuperCreator  then return "⇠ هذا الامر يخص {المالك,المطور} بس  \n" end
 
 local Rtba1 = redis:get(boss..":RtbaNew1:"..msg.chat_id_) or " لايوجد "
 local Rtba2 = redis:get(boss..":RtbaNew2:"..msg.chat_id_) or " لايوجد "
@@ -313,7 +313,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -327,7 +327,7 @@ GetChatMember(arg.ChatID,UserID,function(arg,data)
 if data.status_.ID == "ChatMemberStatusMember" then
 GetUserID(UserID,function(arg,data)
 NameUser = Hyper_Link_Name(data)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم تقييده  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم قيدته  من المجموعه") 
 end,{ChatID=arg.ChatID,UserID=arg.UserID,MsgID=arg.MsgID})
 Restrict(arg.ChatID,arg.UserID,1)
 redis:set(boss..":TqeedUser:"..arg.ChatID..arg.UserID,true)
@@ -357,7 +357,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تقيد المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -373,7 +373,7 @@ GetChatMember(arg.ChatID,arg.UserID,function(arg,data)
 print(data.status_.ID)
 if data.status_.ID == "ChatMemberStatusMember" then 
 redis:set(boss..":TqeedUser:"..arg.ChatID..arg.UserID,true)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو ["..arg.NameUser.." ] \n⇠ تم تقييده  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو ["..arg.NameUser.." ] \n⇠ تم قيدته  من المجموعه") 
 Restrict(arg.ChatID,arg.UserID,1)  
 elseif data.status_.ID == "ChatMemberStatusLeft" then
 sendMsg(arg.ChatID,arg.MsgID,"⇠ لا يمكنني تقيد العضو لانه مغادر المجموعة ؛") 
@@ -399,7 +399,7 @@ return sendMsg(msg.chat_id_,msg.id_,"⇠ مايمديك تقيد المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..msg.chat_id_,UserID) then 
 return sendMsg(msg.chat_id_,msg.id_,"⇠ مايمديك تقيد المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..msg.chat_id_,UserID) then 
-return sendMsg(msg.chat_id_,msg.id_,"⇠ مايمديك تقيد المنشئ الاساسي ؛") 
+return sendMsg(msg.chat_id_,msg.id_,"⇠ مايمديك تقيد المالك ؛") 
 elseif redis:sismember(boss..'owners:'..msg.chat_id_,UserID) then 
 return sendMsg(msg.chat_id_,msg.id_,"⇠ مايمديك تقيد المدير ؛") 
 elseif redis:sismember(boss..'admins:'..msg.chat_id_,UserID) then 
@@ -1404,7 +1404,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -1422,7 +1422,7 @@ return sendMsg(arg.ChatID,arg.MsgID,'⇠ لا يمكنني حظر العضو .\n
 end
 GetUserID(arg.UserID,function(arg,data)
 NameUser = Hyper_Link_Name(data)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم طرده  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم طردته  من المجموعه") 
 StatusLeft(arg.ChatID,arg.UserID)
 end,{ChatID=arg.ChatID,UserID=arg.UserID,MsgID=arg.MsgID})
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
@@ -1446,7 +1446,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تطرد المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -1463,7 +1463,7 @@ elseif data.ID == "Error" and data.code_ == 3 then
 return sendMsg(arg.ChatID,arg.MsgID,'⇠ لا يمكنني طرد العضو .\n ⇠ ليس لدي صلاحيه الحظر او لست مشرف ')    
 end
 StatusLeft(arg.ChatID,arg.UserID)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو 「 "..arg.NameUser.." 」 \n⇠ تم طرده  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو 「 "..arg.NameUser.." 」 \n⇠ تم طردته  من المجموعه") 
 end,{ChatID=arg.ChatID,MsgID=arg.MsgID,UserName=UserName,UserID=UserID,NameUser=NameUser})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=MsgText[2]})
 elseif MsgText[2] and MsgText[2]:match('^%d+$') then
@@ -1495,7 +1495,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المنشئ ؛
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المالك اساسي ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -1521,7 +1521,7 @@ end
 
 redis:hset(boss..'username:'..arg.UserID,'username',USERNAME)
 redis:sadd(boss..'banned:'..arg.ChatID,arg.UserID)
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظره  من المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظرته  من المجموعه") 
 end,{ChatID=arg.ChatID,UserID=arg.UserID,MsgID=arg.MsgID})
 end
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
@@ -1549,7 +1549,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المنشئ ؛
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المالك اساسي ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المالك ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تحظر المدير ؛") 
 elseif redis:sismember(boss..'admins:'..arg.ChatID,UserID) then 
@@ -1569,7 +1569,7 @@ return sendMsg(arg.ChatID,arg.MsgID,'⇠ لا يمكنني حظر العضو .\n
 end
 redis:hset(boss..'username:'..arg.UserID, 'username',arg.UserName)
 redis:sadd(boss..'banned:'..arg.ChatID,arg.UserID)
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظره  من المجموعه") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظرته  من المجموعه") 
 end,{ChatID=arg.ChatID,MsgID=arg.MsgID,UserName=arg.UserName,UserID=UserID})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=MsgText[2]})
 elseif MsgText[2] and MsgText[2]:match('^%d+$') then 
@@ -1735,7 +1735,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -1754,7 +1754,7 @@ sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم ب
 else
 redis:hset(boss..'username:'..arg.UserID,'username',USERNAME)
 redis:sadd(boss..'is_silent_users:'..arg.ChatID,arg.UserID)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم كتمه  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم كتمته  من المجموعه") 
 end
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_})
@@ -1778,7 +1778,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المطور ؛
 elseif redis:sismember(boss..':MONSHA_BOT:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المنشئ ؛") 
 elseif redis:sismember(boss..':MONSHA_Group:'..arg.ChatID,UserID) then 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المنشئ الاساسي ؛") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المالك ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..arg.ChatID,UserID) then 
 return sendMsg(arg.ChatID,arg.MsgID,"⇠ مايمديك تكتم المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..arg.ChatID,UserID) then 
@@ -1793,7 +1793,7 @@ sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم ب
 else
 redis:hset(boss..'username:'..UserID,'username',UserName)
 redis:sadd(boss..'is_silent_users:'..arg.ChatID,UserID)
-sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم كتمه  من المجموعه") 
+sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم كتمته  من المجموعه") 
 end
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=MsgText[2]})
 elseif MsgText[2] and MsgText[2]:match('^%d+$') then 
@@ -1924,13 +1924,13 @@ if MsgText[1] == "فتح السب" 		then return unlock_mmno3(msg) end
 
 
 if MsgText[1] == "ضع رابط" then
-if not msg.Creator  then return "⇠ هذا الامر يخص {المطور,المنشئ الاساسي ,المنشئ} بس  \n" end 
+if not msg.Creator  then return "⇠ هذا الامر يخص {المطور,المالك ,المنشئ} بس  \n" end 
 redis:setex(boss..'WiCmdLink'..msg.chat_id_..msg.sender_user_id_,500,true)
 return '⇠ تمام عزيزي\n⇠ الان ارسل  رابط مجموعتك ؛'
 end
 
 if MsgText[1] == "انشاء رابط" then
-if not msg.Creator then return "⇠ هذا الامر يخص {المطور,المنشئ الاساسي ,المنشئ} بس  \n" end
+if not msg.Creator then return "⇠ هذا الامر يخص {المطور,المالك ,المنشئ} بس  \n" end
 if not redis:get(boss..'ExCmdLink'..msg.chat_id_) then
 local LinkGp = ExportLink(msg.chat_id_)
 if LinkGp then
@@ -2052,7 +2052,7 @@ end
 if MsgText[1] == "مسح الرسائل المجدوله" or MsgText[1] == "مسح الميديا" or MsgText[1] == "مسح الوسائط" then 
 if not msg.Creator then return "⇠ هذا الامر يخص {المطور,المنشئ} بس  \n" end
 local mmezz = redis:smembers(boss..":IdsMsgsCleaner:"..msg.chat_id_)
-if #mmezz == 0 then return "⇠  لا يوجد وسائط مجدوله للحذف او \n امر التنظيف تم تعطيله من قبل المنشئ الاساسي " end
+if #mmezz == 0 then return "⇠  لا يوجد وسائط مجدوله للحذف او \n امر التنظيف تم تعطيله من قبل المالك " end
 for k,v in pairs(mmezz) do
 Del_msg(msg.chat_id_,v)
 end
@@ -2413,11 +2413,11 @@ return ownerlist(msg)
 end
 
 if MsgText[1] == "المالك اساسيين" then 
-if not msg.Creator  then return "⇠ هذا الامر يخص {المطور ,المنشئ الاساسي ,المنشئ } بس  \n" end
+if not msg.Creator  then return "⇠ هذا الامر يخص {المطور ,المالك ,المنشئ } بس  \n" end
 return Malklist(msg)
 end
 if MsgText[1] == "المنشئيين"  or MsgText[1] == "المنشئين" then 
-if not msg.Creator  then return "⇠ هذا الامر يخص {المطور ,المنشئ الاساسي ,المنشئ } بس  \n" end
+if not msg.Creator  then return "⇠ هذا الامر يخص {المطور ,المالك ,المنشئ } بس  \n" end
 return conslist(msg)
 end
 
@@ -3126,7 +3126,7 @@ if redis:sismember(boss..':SUDO_BOT:',UserID) then
 DonisDown = DonisDown.."⇠ تم تنزيله من المطور \n"
 end 
 if redis:sismember(boss..':MONSHA_Group:'..msg.chat_id_,UserID) then 
-DonisDown = DonisDown.."⇠ تم تنزيله من المنشئ الاساسي \n"
+DonisDown = DonisDown.."⇠ تم تنزيله من المالك \n"
 end 
 if redis:sismember(boss..':Malk_Group:'..msg.chat_id_,UserID) then 
 DonisDown = DonisDown.."⇠ تم تنزيله من المالك اساسي \n"
@@ -3242,7 +3242,7 @@ if redis:sismember(boss..':SUDO_BOT:',UserID) then
 DonisDown = DonisDown.."⇠ تم تنزيله من المطور \n"
 end 
 if redis:sismember(boss..':MONSHA_Group:'..msg.chat_id_,UserID) then 
-DonisDown = DonisDown.."⇠ تم تنزيله من المنشئ الاساسي \n"
+DonisDown = DonisDown.."⇠ تم تنزيله من المالك \n"
 end 
 if redis:sismember(boss..':Malk_Group:'..msg.chat_id_,UserID) then 
 DonisDown = DonisDown.."⇠ تم تنزيله من المالك اساسي \n"
@@ -3773,7 +3773,7 @@ else
 redis:hset(boss..'username:'..arg.UserID,'username',USERNAME)
 redis:sadd(boss..'gban_users',arg.UserID)
 kick_user(arg.UserID,arg.ChatID)
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظره عام  من المجموعات ") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ حظرته عام الهطف ") 
 end
 end,{ChatID=arg.ChatID,UserID=UserID,MsgID=arg.MsgID})
 end,{ChatID=msg.chat_id_,MsgID=msg.id_})
@@ -3801,7 +3801,7 @@ else
 redis:hset(boss..'username:'..UserID,'username',UserName)
 redis:sadd(boss..'gban_users',UserID)
 kick_user(UserID,arg.ChatID)
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظره عام  من المجموعات ") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ حظرته عام الهطف ") 
 end
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=MsgText[2]})
 end 
@@ -4924,7 +4924,7 @@ return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 ["..arg.UserName.."] 」 
 end
 redis:sadd(boss..'bannedpv',UserID)
 sendMsg(UserID,arg.MsgID,"⇠ تم حظرك من التواصل") 
-return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 ["..arg.UserName.."] 」 \n⇠ تم حظره  من التواصل") 
+return sendMsg(arg.ChatID,arg.MsgID,"⇠ العضو「 ["..arg.UserName.."] 」 \n⇠ تم حظرته  من التواصل") 
 end,{ChatID=msg.chat_id_,MsgID=msg.id_,UserName=utext})
 return false
 end
@@ -4947,7 +4947,7 @@ end
 redis:hset(boss..'username:'..UserID, 'username', Resolv)
 redis:sadd(boss..'bannedpv',UserID)
 sendMsg(UserID,MsgID,"⇠ تم حظرك من التواصل") 
-return sendMsg(ChatID,MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظره  من التواصل ") 
+return sendMsg(ChatID,MsgID,"⇠ العضو「 "..NameUser.." 」 \n⇠ تم حظرته  من التواصل ") 
 end,{msg=msg}) 
 return false
 end 
