@@ -1419,9 +1419,9 @@ var = redis:get(boss..":RtbaNew1:"..ChatID) or 'مطور اساسي '
 elseif redis:sismember(boss..':SUDO_BOT:',UserID) then
 var = redis:get(boss..":RtbaNew2:"..ChatID) or 'Dev' 
 elseif redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then
-var = redis:get(boss..":RtbaNew3:"..ChatID) or ' المنشىء اساسي'
+var = redis:get(boss..":RtbaNew3:"..ChatID) or ' المالك'
 elseif redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then
-var = redis:get(boss..":RtbaNew8:"..ChatID) or ' المالك '
+var = redis:get(boss..":RtbaNew8:"..ChatID) or ' المالك اساسي '
 elseif redis:sismember(boss..':MONSHA_BOT:'..ChatID,UserID) then
 var = redis:get(boss..":RtbaNew4:"..ChatID) or ' المنشىء '
 elseif redis:sismember(boss..'owners:'..ChatID,UserID) then
@@ -1656,10 +1656,10 @@ end
 --================================{{  List owner  }} ===================================
 
 function Malklist(msg)
-message = '*- قائمه المالكين :*\n\n'
+message = '*- قائمه المالك اساسيين :*\n\n'
 local list = redis:smembers(boss..':Malk_Group:'..msg.chat_id_)
 if #list == 0 then  
-message = message.."- قائمة المالكين فارغه .\n" 
+message = message.."- قائمة المالك اساسيين فارغه .\n" 
 else
 for k,v in pairs(list) do
 local info = redis:hgetall(boss..'username:'..v)
@@ -1671,7 +1671,7 @@ end
 end
 end
 if utf8.len(message) > 4096 then
-return "- لا يمكن عرض المالكين بسبب القائمه كبيره جدا ."
+return "- لا يمكن عرض المالك اساسيين بسبب القائمه كبيره جدا ."
 else
 return message
 end
@@ -2388,7 +2388,7 @@ return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المنشئ  ؛")
 elseif redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المنشئ الاساسي  ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المالك ؛")
+return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المالك اساسي ؛")
 elseif redis:sismember(boss..'owners:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك تقييد المدير ؛") 
 elseif redis:sismember(boss..'admins:'..ChatID,UserID) then 
@@ -2641,7 +2641,7 @@ return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المنشئ ؛")
 elseif redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المنشئ الاساسي  ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المالك ؛") 
+return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك حظر المدير ؛") 
 elseif redis:sismember(boss..'admins:'..ChatID,UserID) then 
@@ -2672,7 +2672,7 @@ return sendMsg(ChatID,MsgID,"- لا يمكنك طرد اللمنشئ ؛")
 elseif redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك طرد المنشئ الاساسي ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"- لا يمكنك طرد المالك ؛") 
+return sendMsg(ChatID,MsgID,"- لا يمكنك طرد المالك اساسي ؛") 
 elseif redis:sismember(boss..'owners:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك طرد المدير ؛") 
 elseif redis:sismember(boss..'admins:'..ChatID,UserID) then 
@@ -2717,7 +2717,7 @@ return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المنشئ ؛")
 elseif redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المنشئ الاساسي ؛") 
 elseif redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المالك ؛")
+return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المالك اساسي ؛")
 elseif redis:sismember(boss..'owners:'..ChatID,UserID) then 
 return sendMsg(ChatID,MsgID,"- لا يمكنك كتم المدير ؛") 
 elseif redis:sismember(boss..'admins:'..ChatID,UserID) then 
@@ -2842,7 +2842,7 @@ if redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then
 DonisDown = DonisDown.."-  تم تنزيله من المنشئ الاساسي  \n"
 end 
 if redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-DonisDown = DonisDown.."- تم تنزيله من المالك  \n"
+DonisDown = DonisDown.."- تم تنزيله من المالك اساسي  \n"
 end 
 if redis:sismember(boss..':MONSHA_BOT:'..ChatID,UserID) then 
 DonisDown = DonisDown.."-  تم تنزيله من المنشئ  \n"
