@@ -35,69 +35,69 @@ local dataid = data.message_id_
 msg = data
 
 if TextCmdquery == "GroupSitting" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateGropSitting(msg)
 elseif TextCmdquery == "MediaSitting" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateMediaSitting(msg)
 elseif TextCmdquery == "OtherSetting" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateOtherSitting(msg)
 elseif TextCmdquery == "List1" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM1Query(msg)
 elseif TextCmdquery == "List2" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM2Query(msg)
 elseif TextCmdquery == "List3" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM3Query(msg)
 elseif TextCmdquery == "List4" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM4Query(msg)
 elseif TextCmdquery == "CmdSudo" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM5Query(msg)
 elseif TextCmdquery == "CmdFiles" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 return UpdateM6Query(msg)
 elseif TextCmdquery == "LoginOut" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 msg.Delete = true
 msg.textmsg = "- تم اخفاء قائمة الاوامر"
 msg.Editeinline = true
 return SendMsgInline(msg)
 elseif TextCmdquery == "CmdBack" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم الادمن , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 msg.textmsg = [[
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-➊← م1 ━ اوامـر الادارة
-➋← م2 ━ اوامـر اعدادات المجموعة
-➌← م3 ━ اوامـر الحماية 
-➍← م4 ━ اوامـر المطور
-➎← م5 ━ اوامـر الـردود
-➏← م6 ━ اوامـر الـتـحـكم بالملفات
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-اي ملاحظة او استفسار او مشكلة :
- راسلني ☚ []]..SUDO_USER..[[]
-ـــــــــــــــــــــــــــــــــــــــــــــــ]]
+
+‏‌‌‏‌‌‌‌‏                                    
+⤶ الاوامر العامة
+
+•  م1 ⤆ لعرض اوامر الادارة
+•  م2 ⤆ لعرض اوامر المجموعة
+•  م3 ⤆ لعرض اوامر الحماية
+• التسليه لعرض اوامر التسليه
+
+[𝐌𝐢𝐬𝐡𝐚𝐫𝐲](https://t.me/jjjij)
+]]
 msg.KeyboardCmd = keyboardCmd
 msg.Editeinline = true
 return SendMsgInline(msg)
 elseif TextCmdquery == "CmdBack1" then
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم الادمن , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 msg.textmsg = [[
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-➊← م1 ━ اوامـر الادارة
-➋← م2 ━ اوامـر اعدادات المجموعة
-➌← م3 ━ اوامـر الحماية 
-➍← م4 ━ اوامـر المطور
-➎← م5 ━ اوامـر الـردود
-➏← م6 ━ اوامـر الـتـحـكم بالملفات
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-اي ملاحظة او استفسار او مشكلة :
- راسلني ☚ []]..SUDO_USER..[[]
-ـــــــــــــــــــــــــــــــــــــــــــــــ]]
+
+‏‌‌‏‌‌‌‌‏                                    
+⤶ الاوامر العامة
+
+•  م1 ⤆ لعرض اوامر الادارة
+•  م2 ⤆ لعرض اوامر المجموعة
+•  م3 ⤆ لعرض اوامر الحماية
+• التسليه لعرض اوامر التسليه
+
+[𝐌𝐢𝐬𝐡𝐚𝐫𝐲](https://t.me/jjjij)
+]]
 msg.KeyboardCmd = keyboardSitting
 msg.Editeinline = true
 return SendMsgInline(msg)
@@ -109,13 +109,13 @@ print(CmdSitting)
 if CmdSitting then
 local ResRedis =  redis:del(boss..CmdSitting..msg.chat_id_)
 if TextCmd == "Sitting3" then 
-if (CmdSitting == "antiedit") and not Get_Rtb(msg,"SuperCreator") then return  answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم فقط للمنشئ الاساسي , ارجو المعذرة ❤️",true) end
+if (CmdSitting == "antiedit") and not Get_Rtb(msg,"SuperCreator") then return  answerCallbackQuery(data.id_,"لا تبعص",true) end
 if (CmdSitting == "lock_linkk" or CmdSitting == "lock_takkl" or CmdSitting == "lock_leftgroup" or CmdSitting == "lock_KickBan") and not Get_Rtb(msg,"Creator") then
-return  answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم فقط للمنشئ , ارجو المعذرة ❤️",true) end
+return  answerCallbackQuery(data.id_,"لا تبعص",true) end
 if (CmdSitting == "lock_RandomRdod" or CmdSitting == "lock_rdodSource" or CmdSitting == "lock_cleaner" or CmdSitting == "idphoto") and not Get_Rtb(msg,"Director") then
-return  answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم فقط للمدير , ارجو المعذرة ❤️",true) end
+return  answerCallbackQuery(data.id_,"لا تبعص",true) end
 end      
-if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"ليس لديك صلاحية التحكم الادمن , ارجو المعذرة ❤️",true) end
+if not CheckUserAdmin(msg) then return answerCallbackQuery(data.id_,"لا تبعص",true) end
 if ResRedis == 0 then redis:set(boss..CmdSitting..msg.chat_id_,true) end
 if TextCmd == "Sitting1" then 
 UpdateGropSitting(msg)
@@ -132,7 +132,7 @@ local UserJoin = tonumber(UserJoin)
 if Text == "CheckRobotJoin:" then
 if CheckUserAdmin(msg) or UserID == UserJoin then
 Restrict(ChatID,UserJoin,2)
-EditMsg(ChatID,dataid,"تقدر ترسل الحين")
+EditMsg(ChatID,dataid,"تم التاكد بانك شخص حقيقي مو زومبي")
 answerCallbackQuery(data.id_,"تقدر ترسل الحين",true)
 else
 answerCallbackQuery(data.id_,"انت الشخص الي مو مقييد او مامعك صلاحيه الاداره، اسفين",true)	
@@ -142,16 +142,16 @@ end
 
 keyboardCmd = [[{
 "inline_keyboard": [
-[{"text": "◐ م1","callback_data": "List1"},{"text": "◐ م2","callback_data": "List2"},{"text": "◐ م3","callback_data": "List3"}],
-[{"text": "◐ م4","callback_data": "CmdSudo"},{"text": "◐ م5","callback_data": "List4"},{"text": "◐ م6","callback_data": "CmdFiles"}],
-[{"text": "- اخفاء الامر","callback_data": "LoginOut"}]
+[{"text": "م1","callback_data": "List1"},{"text": "م2","callback_data": "List2"},{"text": "م3","callback_data": "List3"}],
+[{"text": "التسليه","callback_data": "CmdSudo"},{"text": "السورس","callback_data": "List4"}],
+[{"text": "","callback_data": "LoginOut"}]
 ]}
 ]]
 
 
 keyboardSitting = [[{"inline_keyboard": [
 [{"text": "- اعدادات المجموعة","callback_data": "GroupSitting"},{"text": "- اعدادات الوسائط","callback_data": "MediaSitting"}],
-[{"text": "- اعدادات اخرى","callback_data": "OtherSetting"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]
+[{"text": "- اعدادات اخرى","callback_data": "OtherSetting"},{"text": "","callback_data": "LoginOut"}]
 ]}
 ]]
 
@@ -178,58 +178,56 @@ print(rr)
 end
 function UpdateM1Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "◐ الـتـالـي ◐","callback_data": "List2"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "التالي","callback_data": "List2"}],'
+..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
-textMD = [[- اهلا بك في قائمة اوامر الاداريين
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-﹎﹎﹎﹎﹎اوامر الرفع والتنزيل﹎﹎﹎﹎﹎
-- رفع - تنزيل منشى اساسي
-- رفع - تنزيل مشرف
-- رفع - تنزيل منشى
-- رفع - تنزيل مدير
-- رفع - تنزيل ادمن
-- رفع - تنزيل مميز
-- تنزيل الكل - لازاله جميع الرتب اعلاه
+textMD = [[
+⤶ اوامر الاداره  
 
-﹎﹎﹎﹎﹎اوامر المسح﹎﹎﹎﹎﹎
-- مسح المنشئين الاساسيين
-- مسح المنشئين
-- مسح المدراء
-- مسح الادمنيه
-- مسح المميزين
-- مسح المحظورين
-- مسح المكتومين
-- مسح قائمه العام
-- مسح قائمه المنع
-- مسح الردود العامه
-- مسح الردود
-- مسح الاوامر
-- مسح + عدد
-- مسح بالرد
-- مسح ايدي عام
-- مسح كليشه الايدي
-- مسح كليشه الستارت
-- مسح الترحيب
-- مسح الرابط
-- مسح كلايش التعليمات
+⤶ اوامر الرفع والتنزيل
+⇠  مالك اساسي    ( رفع ⟺  تنزيل )
+⇠  مالك               ( رفع ⟺  تنزيل )
+⇠  مشرف            ( رفع ⟺  تنزيل )
+⇠  مدير               ( رفع ⟺  تنزيل )
+⇠  ادمن              ( رفع ⟺  تنزيل )
+⇠  مميز              ( رفع ⟺  تنزيل )
+⇠  تنزيل الكل ⤌ لأزاله جميع الرتب أعلاه
+——————————————
+⤶  اوامر المسح  
+⇠   مسح المالك اساسيين الاساسيين
+⇠   مسح المالك اساسيين
+⇠  مسح المدراء
+⇠   مسح الادمنيه
+⇠   مسح المميزين
+⇠   مسح المحظورين
+⇠   مسح المكتومين
+⇠   مسح قائمه المنع
+⇠   مسح الردود
+⇠   مسح الاوامر
+⇠   مسح + عدد
+⇠   مسح بالرد
+⇠   مسح  الايدي
+⇠   مسح الترحيب
+⇠   مسح الرابط
+——————————————
+⤶ اوامر الطرد الحظر الكتم  
+⇠  حظر 
+⇠  طرد  
+⇠  كتم 
+⇠  تقيد 
+⇠  الغاء الحظر 
+⇠  الغاء الكتم 
+⇠  فك التقييد 
+⇠  رفع القيود - لفك ↜ كتم،حظر،تقييد
+⇠  منع + الكلمه
+⇠ منع بالرد على ملصق او متحركه
+⇠  الغاء منع + الكلمه
+⇠  طرد البوتات
+⇠  طرد المحذوفين
+⇠  كشف البوتات
 
-﹎﹎﹎﹎﹎اوامر الطرد الحظر الكتم﹎﹎﹎﹎﹎
-- حظر - بالرد،بالمعرف،بالايدي
-- طرد - بالرد،بالمعرف،بالايدي 
-- كتم - بالرد،بالمعرف،بالايدي
-- تقيد - بالرد،بالمعرف،بالايدي
-- الغاء الحظر - بالرد،بالمعرف،بالايدي
-- الغاء الكتم - بالرد،بالمعرف،بالايدي
-- فك التقييد - بالرد،بالمعرف،بالايدي
-- رفع القيود - لحذف ↜ كتم،حظر،حظر عام،تقييد
-- منع + الكلمه
-- الغاء منع + الكلمه
-- طرد البوتات
-- طرد المحذوفين
-- كشف البوتات 
-ـــــــــــــــــــــــــــــــــــــــــــــــ
+[𝐌𝐢𝐬𝐡𝐚𝐫𝐲](https://t.me/jjjij)
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -247,40 +245,38 @@ return false
 end
 function UpdateM2Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "◐ الـتـالـي ◐","callback_data": "List3"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List1"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "التالي","callback_data": "List3"}],'
+..'[{"text": "- رجوع »","callback_data": "List1"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
-- اهلا بك في قائمة اوامر المجموعه
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-﹎﹎﹎﹎اوامر الوضع ﹎﹎﹎﹎
-- ضع الترحيب
-- ضع القوانين
-- ضع وصف
-- ضـع رابط
-- اضف امر
-- اضف رد عام
-- تعيين ايدي عام
-- تعيين كليشه الايدي
+⤶ اوامر الوضع  
+⇠  ضع الترحيب
+⇠  ضع القوانين
+⇠  ضع وصف
+⇠  ضـع رابط
+⇠  تغيير امر
+⇠  تعيين الايدي
+——————————————
+⤶ اوامر رؤية الاعدادات  
+⇠  المطورين
+⇠  المالكين الاساسين
+⇠  المالكين 
+⇠  المدراء
+⇠  الادمنيه
+⇠  المميزين
+⇠  المحظورين
+⇠  القوانين
+⇠  المكتومين
+⇠  المطور 
+⇠  معلوماتي 
+⇠  الحمايه  
+⇠  الوسائط
+⇠  الاعدادت
+⇠  المجموعه
 
-﹎﹎﹎﹎اوامر رؤية الاعدادات﹎﹎﹎﹎
-- المطورين
-- المنشئين الاساسيين
-- المنشئين 
-- الادمنيه
-- المدراء
-- المميزين
-- المحظورين
-- القوانين
-- المكتومين
-- المطور 
-- معلوماتي 
-- الحمايه  
-- الوسائط
-- الاعدادت
-- المجموعه 
-ـــــــــــــــــــــــــــــــــــــــــــــــ
+
+[𝐌𝐢𝐬𝐡𝐚𝐫𝐲](https://t.me/jjjij)
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -299,66 +295,66 @@ end
 
 function UpdateM3Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "◐ الـتـالـي ◐","callback_data": "List4"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List2"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "List2"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
-- اهلا بك في قائمة الحماية
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-﹎﹎﹎ اوامر القفل والفتح بالمسح ﹎﹎﹎
-- قفل - فتح التعديل  
--️ قفل - فتح البصمات 
-- قفل - فتح الفيديو 
-- قفل - فتح الـصــور 
-- قفل - فتح الملصقات 
-- قفل - فتح المتحركه 
+⤶ اهلاً بك في قائمة الحماية
 
-- قفل - فتح الدردشه 
-- قفل - فتح الروابط 
-- قفل - فتح التاك 
-- قفل - فتح البوتات 
-- ️قفل - فتح المعرفات 
-- قفل - فتح البوتات بالطرد 
+⤶ اوامر القفل والفتح بالمسح
 
-- قفل - فتح الكلايش 
--️ قفل - فتح التكرار 
-- قفل - فتح التوجيه 
-- قفل - فتح الانلاين 
-- قفل - فتح الجهات 
-- قفل - فتح الــكـــل 
+⇠ قفل ⤜ ⤛ فتح  التعديل  
+⇠ قفل ⤜ ⤛ فتح  البصمات 
+⇠ قفل ⤜ ⤛ فتح  الفيديو 
+⇠ قفل ⤜ ⤛ فتح  الـصــور 
+⇠ قفل ⤜ ⤛ فتح  الملصقات 
+⇠ قفل ⤜ ⤛ فتح  الملفات  
+⇠ قفل ⤜ ⤛ فتح  المتحركه 
+⇠ قفل ⤜ ⤛ فتح  الدردشه 
+⇠ قفل ⤜ ⤛ فتح  الروابط 
+⇠ قفل ⤜ ⤛ فتح  الهاشتاق 
+⇠ قفل ⤜ ⤛ فتح  البوتات 
+⇠ قفل ⤜ ⤛ فتح  المعرفات 
+⇠ قفل ⤜ ⤛ فتح  البوتات بالطرد 
+⇠ قفل ⤜ ⤛ فتح  الاشعارات 
+⇠ قفل ⤜ ⤛ فتح  الكلايش 
+⇠ قفل ⤜ ⤛ فتح  التكرار 
+⇠ قفل ⤜ ⤛ فتح  التوجيه 
+⇠ قفل ⤜ ⤛ فتح  الانلاين 
+⇠ قفل ⤜ ⤛ فتح  الجهات 
+⇠ قفل ⤜ ⤛ فتح  الــكـــل 
+⇠ قفل ⤜ ⤛ فتح  السب
+⇠ قفل ⤜ ⤛ فتح  الفارسيه
+⇠ قفل ⤜ ⤛ فتح  الانجليزيه
+⇠ قفل ⤜ ⤛ فتح  الاضافه
+⇠ قفل ⤜ ⤛ فتح  الصوت
+⇠ قفل ⤜ ⤛ فتح  الالعاب
+⇠ قفل ⤜ ⤛ فتح  الماركدوان
+⇠ قفل ⤜ ⤛ فتح  الويب
 
-- قفل - فتح السب
-- قفل - فتح الفارسيه
-- قفل - فتح الانقليزيه
-- قفل - فتح الاضافه
-- قفل - فتح الصوت
-- قفل - فتح الالعاب
-- قفل - فتح الماركدوان
-- قفل - فتح الويب
+⤶ اوامر الفتح والقفل بالتقييد 
 
-﹎﹎﹎﹎اوامر الفتح والقفل بالتقييد﹎﹎﹎
-- قفل - فتح التوجيه بالتقييد 
-- قفل - فتح الروابط بالتقييد 
-- قفل - فتح المتحركه بالتقييد 
-- قفل - فتح الصور بالتقييد 
-- قفل - فتح الفيديو بالتقييد 
+⇠ قفل ⤜ ⤛ فتح التوجيه بالتقييد 
+⇠ قفل ⤜ ⤛ فتح الروابط بالتقييد 
+⇠ قفل ⤜ ⤛ فتح المتحركه بالتقييد 
+⇠ قفل ⤜ ⤛ فتح الصور بالتقييد 
+⇠ قفل ⤜ ⤛ فتح الفيديو بالتقييد 
 
-﹎﹎﹎﹎اوامر التفعيل والتعطيل ﹎﹎﹎﹎
-- تفعيل - تعطيل الترحيب 
-- تفعيل - تعطيل الردود 
-- تفعيل - تعطيل التحذير 
-- تفعيل - تعطيل الايدي
-- تفعيل - تعطيل الرابط
-- تفعيل - تعطيل المغادره
-- تفعيل - تعطيل الحظر
-- تفعيل - تعطيل الحمايه
-- تفعيل - تعطيل تاك للكل
-- تفعيل - تعطيل الايدي بالصوره
-- تفعيل - تعطيل التحقق 
-- تفعيل - تعطيل ردود السورس 
-- تفعيل - تعطيل التنظيف التلقائي 
-ـــــــــــــــــــــــــــــــــــــــــــــــ
+⤶ اوامر التفعيل والتعطيل 
+
+⇠ تفعيل ⤜ ⤛ تعطيل الترحيب 
+⇠ تفعيل ⤜ ⤛ تعطيل الردود 
+⇠ تفعيل ⤜ ⤛ تعطيل التحذير 
+⇠ تفعيل ⤜ ⤛ تعطيل الايدي
+⇠ تفعيل ⤜ ⤛ تعطيل الرابط
+⇠ تفعيل ⤜ ⤛ تعطيل اطردني
+⇠ تفعيل ⤜ ⤛ تعطيل الحظر
+⇠ تفعيل ⤜ ⤛ تعطيل الحمايه
+⇠ تفعيل ⤜ ⤛ تعطيل المنشن
+⇠ تفعيل ⤜ ⤛ تعطيل الايدي بالصوره
+⇠ تفعيل ⤜ ⤛ تعطيل التحقق 
+⇠ تفعيل ⤜ ⤛ تعطيل التنظيف التلقائي
+⇠ تفعيل ⤜ ⤛ الردود العشوائيه
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -378,22 +374,11 @@ end
 
 function UpdateM4Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "◐ الـتـالـي ◐","callback_data": "CmdSudo"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List3"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[
-- اهلا بك في قائمة اوامر الردود
-ـــــــــــــــــــــــــــــــــــــــــــــــ
--  جميع اوامر الردود 
-- الردود : لعرض الردود المثبته
--  اضف رد : لاضافه رد جديد
-- مسح رد  الرد المراد مسحه
-- مسح الردود : لمسح كل الردود
--  اضف رد عام : لاضافه رد لكل المجموعات
--  مسح رد عام : لمسح الرد العام 
-- مسح الردود العامه : لمسح كل ردود العامه 
-ـــــــــــــــــــــــــــــــــــــــــــــــ
+-@EE6EE
 ]]
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -412,35 +397,39 @@ end
 
 function UpdateM5Query(msg)
 list_settings = '{"inline_keyboard": ['
-..'[{"text": "◐ التـالـي ◐","callback_data": "CmdFiles"},'..'{"text": "◐ الـسـابـق ◐","callback_data": "List4"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
-textMD = [[ - اهلا بك في قائمة اوامر المطورين
-ـــــــــــــــــــــــــــــــــــــــــــــــ
-- تفعيل
-- تعطيل
-- اسم بوتك + غادر
-- مسح الادمنيه
-- مسح المميزين
-- مسح المدراء
-- مسح المطورين
-- مسح المنشئين
-- مسح المنشئين الاساسيين
-- مسح كلايش التعليمات
-- اذاعه
-- اذاعه خاص
-- اذاعه عام
-- اذاعه بالتثبيت
-- اذاعه عام بالتوجيه
-- تعيين قائمه الاوامر
-- مسح كلايش التعليمات
-- تعيين كليشه ستارت
-- تعيين ايدي عام
-- مسح ايدي عام
-- تفعيل / تعطيل تعيين الايدي
-- تحديث
-ـــــــــــــــــــــــــــــــــــــــــــــــ
+textMD = [[ 
+⤶ اهلين عيني في اوامر التسليه
+————————————————————
+
+⇠ زوجتي    رفع ⤜ ⤛ تنزيل 
+⇠ باعوص    رفع ⤜ ⤛ تنزيل 
+⇠ صياد        رفع ⤜ ⤛ تنزيل 
+⇠ هطف       رفع ⤜ ⤛ تنزيل 
+⇠ خاروف     رفع ⤜ ⤛ تنزيل 
+⇠ حمار         رفع ⤜ ⤛ تنزيل 
+⇠ زق           رفع ⤜ ⤛ تنزيل 
+⇠ كلب         رفع ⤜ ⤛ تنزيل  
+⇠ عسل        رفع ⤜ ⤛ تنزيل 
+⇠ تيس        رفع ⤜ ⤛ تنزيل 
+⇠ كيكه        رفع ⤜ ⤛ تنزيل 
+⇠ لقلبي       رفع ⤜ ⤛ تنزيل 
+⇠ زواج  ⤜ ⤛ طلاق 
+————————————————————
+⇠ قائمة البواعيص 🏅
+⇠ قائمة الصيادين 🔫
+⇠ قائمة الهطوف 🧱
+⇠ قائمة الخرفان  🐏
+⇠ قائمة الحمير 🦓
+⇠ قائمة الزق 💩
+⇠ قائمة الكلاب 🐩
+⇠ قائمة العسل 🍯
+⇠ قائمة التيوس🐐 
+⇠ قائمة الكيك  🍰 
+
+[𝐌𝐢𝐬𝐡𝐚𝐫𝐲](https://t.me/jjjij)
 ]] 
 GetUserID(msg.sender_user_id_,function(arg,data)
 msg = arg.msg
@@ -461,7 +450,7 @@ function UpdateM6Query(msg)
 list_settings = '{"inline_keyboard": ['
 ..'[{"text": "◐ الـتـالـي ◐","callback_data": "List3"},'..'{"text": "◐ الـسابـق ◐","callback_data": "List1"}],'
 ..'[{"text": "القائمة الرئيسية","callback_data": "CmdBack"}],'
-..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "CmdBack"},{"text": "","callback_data": "LoginOut"}]'
 ..']}'
 msg.KeyboardCmd = list_settings
 textMD = [[ - اهلا بك في قائمة اوامر الملفات
@@ -515,7 +504,7 @@ list_settings = '{"inline_keyboard": ['
 ..'[{"text": " الانقليزيه » '..(redis:get(boss..'lock_lang'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#lock_lang"},'
 ..'{"text": " التوجيه » '..(redis:get(boss..'mute_forward'..msg.chat_id_) or 'false')..'","callback_data": "Sitting1#mute_forward"}],'
 
-..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "","callback_data": "LoginOut"}]'
 
 ..']}'
 
@@ -547,7 +536,7 @@ list_settings = '{"inline_keyboard": ['
 
 ..'[{"text": " الموقع » '..(redis:get(boss..'mute_location'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_location"},'
 ..'{"text": " الملفات » '..(redis:get(boss..'mute_document'..msg.chat_id_) or 'false')..'","callback_data": "Sitting2#mute_document"}],'
-..'[{"text": "- رجوع » ","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع » ","callback_data": "CmdBack1"},{"text": "","callback_data": "LoginOut"}]'
 
 ..']}'
 
@@ -580,7 +569,7 @@ list_settings = '{"inline_keyboard": ['
 ..'[{"text": " التحقق » '..(redis:get(boss..'lock_check'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_check"}],'
 ..'[{"text": " التنظيف التلقائي » '..(redis:get(boss..'lock_cleaner'..msg.chat_id_) or 'false')..'","callback_data": "Sitting3#lock_cleaner"}],'
 
-..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "- اخفاء الامر","callback_data": "LoginOut"}]'
+..'[{"text": "- رجوع »","callback_data": "CmdBack1"},{"text": "","callback_data": "LoginOut"}]'
 
 
 ..']}'
@@ -1431,7 +1420,7 @@ var = redis:get(boss..":RtbaNew6:"..ChatID) or 'ادمن في البوت '
 elseif redis:sismember(boss..'whitelist:'..ChatID,UserID) then
 var = redis:get(boss..":RtbaNew7:"..ChatID) or 'عضو مميز '
 else
-var = 'فقط'
+var = 'عضو'
 end
 return var
 end
@@ -1599,10 +1588,10 @@ function conslist(msg)
 
 
 
-message = '*⇠ المنشئيين الاساسيين:*\n\n'
+message = '*⇠ المالكيين الاساسيين:*\n\n'
 local monsha = redis:smembers(boss..':MONSHA_Group:'..msg.chat_id_)
 if #monsha == 0 then 
-message = message .."- قائمة المنشئين الاساسين فارغه .\n"
+message = message .."- قائمة المالكين الاساسين فارغه .\n"
 else
 for k,v in pairs(monsha) do
 local info = redis:hgetall(boss..'username:'..v)
@@ -2410,12 +2399,12 @@ end
 
 if cmd == "raf3salem" then
 if redis:sismember(nk..'salem:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه قرد  في المجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ من قبل قرد  في المجموعه \n") 
 end
 
 redis:hset(nk..'username:'..UserID, 'username', Resolv)
 redis:sadd(nk..'salem:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه قرد مجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعته قرد مجموعه \n") 
 end
 
 if cmd == "tnzelsalem" then
@@ -2428,12 +2417,12 @@ end
 
 if cmd == "raf3salem1" then
 if redis:sismember(nk..'salem1:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه قلبك في المجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ من قبل قلبك في المجموعه \n") 
 end
 
 redis:hset(nk..'username:'..UserID, 'username', Resolv)
 redis:sadd(nk..'salem1:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه قلبك \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعته قلبك \n") 
 end
 
 if cmd == "tnzelsalem1" then
@@ -2446,12 +2435,12 @@ end
 
 if cmd == "raf3salem2" then
 if redis:sismember(nk..'salem2:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه العضو وتكه في المجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ من قبل العضو وتكه في المجموعه \n") 
 end
 
 redis:hset(nk..'username:'..UserID, 'username', Resolv)
 redis:sadd(nk..'salem2:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه وتكه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعته وتكه \n") 
 end
 
 if cmd == "tnzelsalem2" then
@@ -2464,12 +2453,12 @@ end
 
 if cmd == "raf3salem3" then
 if redis:sismember(nk..'salem3:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعها زوجتك في المجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ من قبلا زوجتك في المجموعه \n") 
 end
 
 redis:hset(nk..'username:'..UserID, 'username', Resolv)
 redis:sadd(nk..'salem3:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعها زوجتك \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعتها زوجتك \n") 
 end
 
 if cmd == "tnzelsalem3" then
@@ -2482,12 +2471,12 @@ end
 
 if cmd == "raf3salem4" then
 if redis:sismember(nk..'salem4:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم بالتأكيد رفعه زوجك في المجموعه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ من قبل زوجك في المجموعه \n") 
 end
 
 redis:hset(nk..'username:'..UserID, 'username', Resolv)
 redis:sadd(nk..'salem4:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعه زوجك دلعيه \n") 
+return sendMsg(ChatID,MsgID,"⇠  العضو「 "..NameUser.." 」 \n⤌ تم رفعته زوجك دلعيه \n") 
 end
 
 if cmd == "tnzelsalem4" then
@@ -2502,11 +2491,11 @@ end
 
 if cmd == "setwhitelist" then
 if redis:sismember(boss..'whitelist:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مميز  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل مميز  في المجموعه ✓") 
 end
 redis:hset(boss..'username:'..UserID, 'username', Resolv)
 redis:sadd(boss..'whitelist:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه مميز  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته مميز  في المجموعه ✓") 
 end
 if cmd == "remwhitelist" then
 if not redis:sismember(boss..'whitelist:'..ChatID,UserID) then 
@@ -2517,11 +2506,11 @@ return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n-
 end
 if cmd == "setmnsha" then
 if redis:sismember(boss..':MONSHA_BOT:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه منشئ  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل منشئ  في المجموعه ✓") 
 end
 redis:hset(boss..'username:'..UserID, 'username', Resolv)
 redis:sadd(boss..':MONSHA_BOT:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه منشئ  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته منشئ  في المجموعه ✓") 
 end
 if cmd == "remmnsha" then
 if not redis:sismember(boss..':MONSHA_BOT:'..ChatID,UserID) then 
@@ -2533,12 +2522,12 @@ end
 
 if cmd == "setowner" then
 if redis:sismember(boss..'owners:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مدير  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل مدير  في المجموعه ✓") 
 end
 Resolv = Resolv:gsub([[\_]],"_")
 redis:hset(boss..'username:'..UserID, 'username', Resolv)
 redis:sadd(boss..'owners:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه مدير  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته مدير  في المجموعه ✓") 
 end
 if cmd == "remowner" then
 if not redis:sismember(boss..'owners:'..ChatID,UserID) then 
@@ -2549,12 +2538,12 @@ return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n-
 end
 if cmd == "promote" then
 if redis:sismember(boss..'admins:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه ادمن  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل ادمن  في المجموعه ✓") 
 end
 Resolv = Resolv:gsub([[\_]],"_")
 redis:hset(boss..'username:'..UserID, 'username', Resolv)
 redis:sadd(boss..'admins:'..ChatID,UserID) 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه ادمن  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته ادمن  في المجموعه ✓") 
 end
 if cmd == "demote" then
 if not redis:sismember(boss..'admins:'..ChatID,UserID) then 
@@ -2577,46 +2566,46 @@ end
 
 if cmd == "Upmonsh" then
 if redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه منشئ اساسي  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل مالك  في المجموعه ✓") 
 end
 redis:hset(boss..'username:'..UserID,'username',USERNAME)
 redis:sadd(boss..':MONSHA_Group:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه منشئ اساسي  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته مالك  في المجموعه ✓") 
 end
 
 if cmd == "Dwmonsh" then
 if not redis:sismember(boss..':MONSHA_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد تنزيله منشئ اساسي  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد تنزيله مالك  في المجموعه ✓") 
 end
 redis:srem(boss..':MONSHA_Group:'..ChatID,UserID) 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم تنزيله منشئ اساسي  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم تنزيله مالك  في المجموعه ✓") 
 end
 
 
 if cmd == "UpMalk" then
 if redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مالك  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل مالك اساسي  في المجموعه ✓") 
 end
 redis:hset(boss..'username:'..UserID,'username',USERNAME)
 redis:sadd(boss..':Malk_Group:'..ChatID,UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه مالك  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته مالك اساسي  في المجموعه ✓") 
 end
 
 if cmd == "DwnMalk" then
 if not redis:sismember(boss..':Malk_Group:'..ChatID,UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد تنزيله مالك  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد تنزيله مالك اساسي  في المجموعه ✓") 
 end
 redis:srem(boss..':Malk_Group:'..ChatID,UserID) 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم تنزيله مالك  في المجموعه ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم تنزيله مالك اساسي  في المجموعه ✓") 
 end
 
 if cmd == "up_sudo" then
 if redis:sismember(boss..':SUDO_BOT:',UserID) then 
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم بالتاكيد رفعه مطور  في البوت ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- من قبل مطور  في البوت ✓") 
 end
 redis:hset(boss..'username:'..UserID, 'username', USERNAME)
 redis:sadd(boss..':SUDO_BOT:',UserID)
-return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعه مطور  في البوت ✓") 
+return sendMsg(ChatID,MsgID,"⇠ المستخدم  ⋙「 "..NameUser.." 」 \n- تم رفعته مطور  في البوت ✓") 
 end
 
 if cmd == "dn_sudo" then

