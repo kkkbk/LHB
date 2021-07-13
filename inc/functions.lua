@@ -1026,6 +1026,7 @@ if edit then EditMsg(msg.chat_id_,msg.id_,'60% - |███████     |') 
 download_file('https://raw.githubusercontent.com/kkkbk/LHB/main/inc/Script.lua','./inc/Script.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'80% - |█████████   |') end
 download_file('https://raw.githubusercontent.com/kkkbk/LHB/main/inc/functions.lua','./inc/functions.lua')
+download_file('https://raw.githubusercontent.com/kkkbk/LHB/main/plugins/games.lua','./plugins/games.lua')
 if edit then EditMsg(msg.chat_id_,msg.id_,'100% - |█████████████|\n\n🔝-* تم تحديث السورس الى اصدار *v'..redis:get(boss..":VERSION")..'*\n📟-* تم اعاده تشغيل السورس بنجاح') end
 if edit then dofile("./inc/Run.lua") end
 print("Update Source And Reload ~ ./inc/Run.lua")
