@@ -1118,7 +1118,7 @@ if msg.text and not redis:get(boss..'lock_geams'..msg.chat_id_) then
 if msg.text == redis:get(boss..':Set_alii:'..msg.chat_id_) then -- // المختلف
 redis:incrby(boss..':User_Points:'..msg.chat_id_..msg.sender_user_id_,1)  
 redis:del(boss..':Set_alii:'..msg.chat_id_)
-return sendMsg(msg.chat_id_,msg.id_,'*   كفو اجابتك صح   \*   \n')
+return sendMsg(msg.chat_id_,msg.id_,'كفو اجابتك صح')
 end
 
 if msg.text == redis:get(boss..':Set_Amthlh:'..msg.chat_id_) then -- // امثله
