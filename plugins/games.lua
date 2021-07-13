@@ -1201,31 +1201,31 @@ end
 return sendMsg(msg.chat_id_,msg.id_,"* ⇠* تم ادخال المعرف ( ["..msg.text.."] ) \n ⇠تبقى ( *"..CountUser.."* ) لاعبين ليكتمل العدد\n📑╽ارسل المعرف التالي ")
 end
 end 
-if redis:get(hkem.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_) then 
+if redis:get(boss.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_) then 
 if msg.text:match("^(%d+)$") then
 if tonumber(msg.text:match("^(%d+)$")) > 99999999990 then
 sendMsg(msg.chat_id_,msg.id_,"*• لا تستطيع اضافة اكثر من99999999990 رساله\n*")
-redis:del(hkem.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(boss.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
 return false  end 
-local GET_IDUSER = redis:get(hkem..'SET:ID:USER'..msg.chat_id_)  
+local GET_IDUSER = redis:get(boss..'SET:ID:USER'..msg.chat_id_)  
 sendMsg(msg.chat_id_,msg.id_,"\n• *│روح خالي تم اضافة له { "..msg.text.." }* رساله")
-redis:incrby(hkem..'msgs:'..GET_IDUSER..':'..msg.chat_id_,msg.text)  
+redis:incrby(boss..'msgs:'..GET_IDUSER..':'..msg.chat_id_,msg.text)  
 end
-redis:del(hkem.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(boss.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
 end
-if redis:get(hkem.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_) then 
+if redis:get(boss.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_) then 
 if msg.text:match("^(%d+)$") then
 if tonumber(msg.text:match("^(%d+)$")) > 99999999990 then
 sendMsg(msg.chat_id_,msg.id_,"*• لا تستطيع اضافة اكثر من 99999999990 نقطه\n*")   
-redis:del(hkem.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(boss.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
 return false  end 
-local GET_IDUSER = redis:get(hkem..'SET:ID:USER:NUM'..msg.chat_id_)  
+local GET_IDUSER = redis:get(boss..'SET:ID:USER:NUM'..msg.chat_id_)  
 sendMsg(msg.chat_id_,msg.id_,"\n• *روح خالي تم  اضافة له { "..msg.text.." }* نقطه")
-redis:incrby(hkem..':User_Points:'..msg.chat_id_..GET_IDUSER,msg.text)  
+redis:incrby(boss..':User_Points:'..msg.chat_id_..GET_IDUSER,msg.text)  
 end
-redis:del(hkem.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
+redis:del(boss.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
 end
-if redis:get(hkem.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
+if redis:get(boss.."SET:GAME" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if msg.text:match("^(%d+)$") then
 local NUM = msg.text:match("^(%d+)$")
 if tonumber(NUM) > 6 then
